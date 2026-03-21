@@ -112,7 +112,7 @@ export function Navigation() {
                 </Link>
                 <Link href="/sign-up">
                   <Button className="w-full bg-[var(--blue)] hover:bg-[var(--blue)]/90 text-white">
-                    Register Now
+                    Register PLEASE
                   </Button>
                 </Link>
               </div>
