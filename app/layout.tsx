@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from 'next'
 import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
-import { ClerkProvider } from '@clerk/nextjs'
+import { withAuth } from '@workos-inc/authkit-nextjs'
+import { AuthKitProvider } from '@workos-inc/authkit-nextjs/components'
 import { Analytics } from '@vercel/analytics/next'
+
+import { isWorkOSConfigured } from '@/lib/workos'
+
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({ 
@@ -32,21 +36,24 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const auth = isWorkOSConfigured ? await withAuth() : null
+  const initialAuth = auth ? (({ accessToken, ...rest }) => rest)(auth) : undefined
+
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
-        <ClerkProvider>
+        <AuthKitProvider initialAuth={initialAuth}>
           {children}
           <Analytics />
-        </ClerkProvider>
+        </AuthKitProvider>
       </body>
     </html>
   )
