@@ -133,7 +133,7 @@ export function HeroSection() {
           {[
             { value: "24", label: "Hours", accent: "cyan" },
             { value: "150+", label: "Hackers", accent: "gold" },
-            { value: "5", label: "Tracks", accent: "blue" },
+            { value: "8", label: "Tracks", accent: "blue" },
             { value: "24/7", label: "Mentor Support", accent: "magenta" },
           ].map((stat, index) => (
             <div 

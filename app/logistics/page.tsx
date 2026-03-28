@@ -136,8 +136,6 @@ export default function LogisticsPage() {
                   <li>Laptop and charger</li>
                   <li>Valid photo ID</li>
                   <li>Comfortable clothes</li>
-                  <li>Toiletries for overnight</li>
-                  <li>Sleeping bag (optional)</li>
                 </ul>
               </div>
             </div>
