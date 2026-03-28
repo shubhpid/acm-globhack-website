@@ -51,14 +51,14 @@ export function AboutSection() {
   return (
     <section className="relative py-32 overflow-hidden">
       {/* Liquid glass background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-[rgb(12,12,24)] to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-[rgb(12,12,28)] to-background" />
       
       {/* Floating orbs */}
-      <div className="orb orb-blue w-[400px] h-[400px] top-20 -right-40 opacity-30" />
-      <div className="orb orb-red w-[350px] h-[350px] bottom-40 -left-32 opacity-30" />
+      <div className="orb orb-blue w-[500px] h-[500px] top-20 -right-48 opacity-25" />
+      <div className="orb orb-red w-[400px] h-[400px] bottom-40 -left-40 opacity-25" />
       
       {/* Subtle grid */}
-      <div className="absolute inset-0 grid-overlay opacity-20" />
+      <div className="absolute inset-0 grid-overlay opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -81,7 +81,7 @@ export function AboutSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 overflow-hidden"
+              className="group relative glass-card glass-card-hover rounded-2xl p-8 overflow-hidden"
             >
               {/* Glow effect on hover */}
               <div 

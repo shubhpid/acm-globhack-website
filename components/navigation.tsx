@@ -12,6 +12,7 @@ const navItems = [
   { href: "/logistics", label: "Logistics" },
   { href: "/tracks", label: "Tracks" },
   { href: "/faq", label: "FAQ" },
+  { href: "/sponsors", label: "Sponsors" },
 ]
 
 export function Navigation() {
@@ -44,7 +45,7 @@ export function Navigation() {
             </div>
             <span className="text-xl font-bold tracking-tight">
               <span className="text-foreground">GLOBE</span>
-              <span className="text-amber-400">HACK</span>
+              <span className="text-gradient">HACK</span>
             </span>
           </Link>
 

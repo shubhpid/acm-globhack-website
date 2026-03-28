@@ -2,6 +2,7 @@
 
 import { ExternalLink } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const sponsors = {
   platinum: [
@@ -62,11 +63,27 @@ const sponsors = {
   ],
 }
 
+const partners = [
+  {
+    name: "ACM at ASU",
+    logo: "/images/acm-asu-logo.png",
+    description: "The Association for Computing Machinery student chapter at Arizona State University.",
+    website: "https://asu.acm.org",
+  },
+  {
+    name: "Global Career Network",
+    logo: "/images/gcn-logo.png",
+    description: "Connecting students with global career opportunities and professional development.",
+    website: "https://globalcareernetwork.org",
+  },
+]
+
 const tierConfig: Record<string, { color: string; label: string }> = {
   platinum: { color: "cyan", label: "Platinum Sponsors" },
   gold: { color: "gold", label: "Gold Sponsors" },
   silver: { color: "#C0C0C0", label: "Silver Sponsors" },
   bronze: { color: "#CD7F32", label: "Bronze Sponsors" },
+  partners: { color: "#3B82F6", label: "Organizing Partners" },
 }
 
 function SponsorCard({ 
@@ -137,6 +154,46 @@ function SponsorCard({
   )
 }
 
+function PartnerCard({ 
+  partner 
+}: { 
+  partner: { name: string; logo: string; description: string; website: string }
+}) {
+  return (
+    <Link 
+      href={partner.website}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block h-full"
+    >
+      <div className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 h-full">
+        <div className="flex flex-col items-center text-center h-full">
+          {/* Actual logo */}
+          <div className="relative w-24 h-24 mb-6 transition-transform duration-300 group-hover:scale-110">
+            <Image
+              src={partner.logo}
+              alt={partner.name}
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          {/* Name */}
+          <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2 transition-colors group-hover:text-[var(--cyan)]">
+            {partner.name}
+            <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </h3>
+
+          {/* Description */}
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {partner.description}
+          </p>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
 function TierHeader({ tier }: { tier: string }) {
   const { color, label } = tierConfig[tier]
   const isVariable = color.startsWith('#') ? false : true
@@ -172,6 +229,16 @@ export function SponsorsGrid() {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[#0a0a12] to-background" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Organizing Partners */}
+        <div className="mb-24">
+          <TierHeader tier="partners" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {partners.map((partner, index) => (
+              <PartnerCard key={index} partner={partner} />
+            ))}
+          </div>
+        </div>
+
         {/* Platinum */}
         <div className="mb-20">
           <TierHeader tier="platinum" />

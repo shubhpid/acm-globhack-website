@@ -27,7 +27,7 @@ export function Footer() {
               </div>
               <span className="text-xl font-bold tracking-tight">
                 <span className="text-foreground">GLOBE</span>
-                <span className="text-amber-400">HACK</span>
+                <span className="text-gradient">HACK</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
@@ -60,6 +60,7 @@ export function Footer() {
                 { label: "Logistics", href: "/logistics" },
                 { label: "Tracks", href: "/tracks" },
                 { label: "FAQ", href: "/faq" },
+                { label: "Sponsors", href: "/sponsors" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link 
@@ -96,10 +97,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Organizers */}
+          {/* Organizers with actual logos */}
           <div>
             <h3 className="text-sm font-semibold text-foreground mb-4">Organized By</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               <li>
                 <Link 
                   href="https://asu.acm.org" 
@@ -107,10 +108,15 @@ export function Footer() {
                   rel="noopener noreferrer" 
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 group"
                 >
-                  <div className="w-8 h-8 rounded-xl bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors duration-300">
-                    <span className="text-xs font-bold text-cyan-400">ACM</span>
+                  <div className="relative w-10 h-10">
+                    <Image
+                      src="/images/acm-asu-logo.png"
+                      alt="ACM at ASU"
+                      fill
+                      className="object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
                   </div>
-                  ACM at ASU
+                  <span>ACM at ASU</span>
                   <ExternalLink className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
@@ -121,10 +127,15 @@ export function Footer() {
                   rel="noopener noreferrer" 
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 group"
                 >
-                  <div className="w-8 h-8 rounded-xl bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
-                    <span className="text-xs font-bold text-amber-400">GCN</span>
+                  <div className="relative w-10 h-10">
+                    <Image
+                      src="/images/gcn-logo.png"
+                      alt="Global Career Network"
+                      fill
+                      className="object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
                   </div>
-                  Global Career Network
+                  <span>Global Career Network</span>
                   <ExternalLink className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
