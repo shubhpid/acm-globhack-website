@@ -91,9 +91,8 @@ export function WorkOSEntryCard({
               <Input
                 className={cn(
                   'h-16 rounded-2xl border border-[#6B5ED7] bg-[#171717] pl-6 pr-16 text-lg text-white placeholder:text-zinc-500 focus-visible:border-[#8A7CFF] focus-visible:ring-[#8A7CFF]/35',
-                  disabled && 'cursor-not-allowed opacity-60',
+                  disabled && 'opacity-60',
                 )}
-                disabled={disabled}
                 id={`${mode}-email`}
                 name="email"
                 onChange={(event) => setEmail(event.target.value)}
