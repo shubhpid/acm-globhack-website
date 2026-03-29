@@ -119,7 +119,7 @@ function TimelineItem({
 
 export function ScheduleSection() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[rgb(12,12,28)] via-background to-[rgb(12,12,28)]" />
       
@@ -132,21 +132,21 @@ export function ScheduleSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20">
-          <p className="text-sm font-medium text-cyan-400 uppercase tracking-widest mb-4">
+        <div className="text-center mb-10 md:mb-20 px-2">
+          <p className="text-xs md:text-sm font-medium text-cyan-400 uppercase tracking-widest mb-3 md:mb-4">
             Event Schedule
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6">
             24 Hours of{' '}
             <span className="text-gradient">Innovation</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             From opening ceremony to awards, here&apos;s what to expect at <span className="font-zen-dots text-cyan-400">Globehacks</span> 2026.
           </p>
         </div>
 
         {/* Schedule Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Day 1 */}
           <div>
             <div className="flex items-center gap-4 mb-8">

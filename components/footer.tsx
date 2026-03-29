@@ -17,14 +17,13 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6 group">
-              <div className="relative w-10 h-10">
-                <Image
-                  src="/images/hero-orb.png"
-                  alt="Globehacks Logo"
-                  fill
-                  className="object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"
-                />
-              </div>
+              <Image
+                src="/images/hero-orb.png"
+                alt="Globehacks Logo"
+                width={40}
+                height={40}
+                className="object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+              />
               <span className="text-xl font-bold tracking-tight">
                 <span className="text-foreground">GLOBE</span>
                 <span className="text-gradient">HACK</span>
@@ -108,14 +107,13 @@ export function Footer() {
                   rel="noopener noreferrer" 
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 group"
                 >
-                  <div className="relative w-10 h-10">
-                    <Image
-                      src="/images/acm-asu-logo.png"
-                      alt="ACM at ASU"
-                      fill
-                      className="object-contain group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
+                  <Image
+                    src="/images/acm-asu-logo.png"
+                    alt="ACM at ASU"
+                    width={40}
+                    height={40}
+                    className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
                   <span>ACM at ASU</span>
                   <ExternalLink className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
@@ -127,14 +125,13 @@ export function Footer() {
                   rel="noopener noreferrer" 
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 group"
                 >
-                  <div className="relative w-10 h-10">
-                    <Image
-                      src="/images/gcn-logo.png"
-                      alt="Global Career Network"
-                      fill
-                      className="object-contain group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
+                  <Image
+                    src="/images/gcn-logo.png"
+                    alt="Global Career Network"
+                    width={40}
+                    height={40}
+                    className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
                   <span>Global Career Network</span>
                   <ExternalLink className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>

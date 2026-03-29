@@ -49,15 +49,14 @@ export function Navigation() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="relative w-10 h-10">
-              <Image
-                src="/images/hero-orb.png"
-                alt="Globehacks Logo"
-                fill
-                priority
-                className="object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+            <Image
+              src="/images/hero-orb.png"
+              alt="Globehacks Logo"
+              width={40}
+              height={40}
+              priority
+              className="object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"
+            />
             <span className="text-xl font-bold tracking-tight font-zen-dots">
               <span className="text-cyan-400">GLOBEHACK</span>
             </span>

@@ -49,7 +49,7 @@ const features = [
 
 export function AboutSection() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 md:py-32 overflow-hidden">
       {/* Liquid glass background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-[rgb(12,12,28)] to-background" />
       
@@ -62,26 +62,26 @@ export function AboutSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-20">
-          <p className="text-sm font-medium text-cyan-400 uppercase tracking-widest mb-4">
+        <div className="text-center mb-10 md:mb-20 px-2">
+          <p className="text-xs md:text-sm font-medium text-cyan-400 uppercase tracking-widest mb-3 md:mb-4">
             What is <span className="font-zen-dots">Globehacks</span>?
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 text-balance">
             More Than Just a{' '}
             <span className="text-gradient">Hackathon</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed text-balance">
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed text-balance">
             <span className="font-zen-dots text-cyan-400">Globehacks</span> 2026 is Arizona&apos;s premier go-to-market hackathon where innovation meets implementation. 
             Over 24 hours, you&apos;ll build, learn, and connect with a community that values turning ideas into reality.
           </p>
         </div>
 
         {/* Features grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative glass-card glass-card-hover rounded-2xl p-8 overflow-hidden"
+              className="group relative glass-card glass-card-hover rounded-xl md:rounded-2xl p-5 md:p-8 overflow-hidden"
             >
               {/* Glow effect on hover */}
               <div 
