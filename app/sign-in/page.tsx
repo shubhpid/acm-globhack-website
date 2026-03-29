@@ -56,6 +56,15 @@ export default async function SignInPage() {
               </div>
             ) : (
               <WorkOSEntryCard actionPath="/login" disabled={!isWorkOSConfigured} footerHref="/sign-up" footerLinkLabel="Sign up" footerText="Don't have an account?" mode="sign-in" subtitle="Your email is passed to WorkOS as a login hint, and social sign-in continues through your configured AuthKit providers." title="Sign in" />
+              <WorkOSEntryCard
+                actionPath="/login"
+                footerHref="/sign-up"
+                footerLinkLabel="Sign up"
+                footerText="Don't have an account?"
+                mode="sign-in"
+                subtitle="Your email is passed to WorkOS as a login hint, and social sign-in continues through your configured AuthKit providers."
+                title="Sign in"
+              />
             )}
           </div>
         </div>
