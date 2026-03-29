@@ -52,23 +52,6 @@ export default async function SignUpPage() {
                   <div className="glass-card rounded-2xl border border-white/5 px-6 py-5 text-center">
                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-400">Application Locked</p>
                     <p className="mt-3 text-lg text-muted-foreground">Sign up or log in first, and the full application window will appear here automatically.</p>
-                  <WorkOSEntryCard
-                    actionPath="/register"
-                    footerHref="/sign-in"
-                    footerLinkLabel="Sign in"
-                    footerText="Already have an account?"
-                    mode="register"
-                    subtitle="Start with WorkOS AuthKit to unlock the application window right after you sign up or log in."
-                    title="Sign up"
-                  />
-                  <div className="rounded-2xl border border-dashed border-[color:rgba(134,163,233,0.35)] bg-[rgba(10,14,24,0.72)] px-6 py-5 text-center">
-                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--cyan)]/75">
-                      Application Locked
-                    </p>
-                    <p className="mt-3 text-lg text-zinc-300">
-                      Sign up or log in first, and the full application window will appear here
-                      automatically.
-                    </p>
                   </div>
                 </div>
               )}

@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 
 type WorkOSEntryCardProps = {
   actionPath: '/login' | '/register'
+  disabled?: boolean
   footerHref: string
   footerLinkLabel: string
   footerText: string
@@ -51,6 +52,7 @@ function GitHubIcon() {
 
 export function WorkOSEntryCard({
   actionPath,
+  disabled = false,
   footerHref,
   footerLinkLabel,
   footerText,
@@ -103,30 +105,6 @@ export function WorkOSEntryCard({
                   <div className="rounded-xl bg-cyan-500/10 p-2 border border-cyan-500/20">
                     <KeyRound className="h-5 w-5 text-cyan-400" />
                   </div>
-        <form
-          action={actionPath}
-          className="space-y-5"
-          method="GET"
-        >
-          <div className="space-y-3">
-            <label className="text-left text-lg font-semibold text-white" htmlFor={`${mode}-email`}>
-              Email
-            </label>
-            <div className="relative">
-              <Input
-                className={cn(
-                  'h-16 rounded-2xl border border-[#6B5ED7] bg-[#171717] pl-6 pr-16 text-lg text-white placeholder:text-zinc-500 focus-visible:border-[#8A7CFF] focus-visible:ring-[#8A7CFF]/35',
-                )}
-                id={`${mode}-email`}
-                name="email"
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="Your email address"
-                type="email"
-                value={email}
-              />
-              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-zinc-300">
-                <div className="rounded-xl bg-zinc-300/15 p-2">
-                  <KeyRound className="h-5 w-5" />
                 </div>
               </div>
             </div>
@@ -139,13 +117,6 @@ export function WorkOSEntryCard({
               Continue
             </Button>
           </form>
-          <Button
-            className="h-14 w-full rounded-2xl bg-white text-xl font-semibold text-black hover:bg-white/90"
-            type="submit"
-          >
-            Continue
-          </Button>
-        </form>
 
           <div className="my-8 flex items-center gap-4 text-sm font-medium uppercase tracking-[0.25em] text-muted-foreground">
             <span className="h-px flex-1 bg-white/10" />
@@ -190,29 +161,6 @@ export function WorkOSEntryCard({
               )}
             </Button>
           </div>
-        <div className="space-y-4">
-          <Button
-            asChild
-            className="h-14 w-full justify-center rounded-2xl border border-white/18 bg-transparent text-lg text-zinc-100 hover:bg-white/6"
-            variant="outline"
-          >
-            <a href={actionPath}>
-              <GoogleIcon />
-              Continue with Google
-            </a>
-          </Button>
-
-          <Button
-            asChild
-            className="h-14 w-full justify-center rounded-2xl border border-white/18 bg-transparent text-lg text-zinc-100 hover:bg-white/6"
-            variant="outline"
-          >
-            <a href={actionPath}>
-              <GitHubIcon />
-              Continue with GitHub
-            </a>
-          </Button>
-        </div>
 
           <p className="mt-8 text-center text-lg text-muted-foreground">
             {footerText}{' '}
