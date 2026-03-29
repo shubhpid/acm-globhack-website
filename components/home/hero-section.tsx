@@ -83,8 +83,8 @@ export function HeroSection() {
         {/* Liquid Glass Container */}
         <div className="glass-panel rounded-3xl p-8 md:p-12 lg:p-16 border border-white/5">
           
-          {/* Two column layout: Content left, Globe right */}
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          {/* Two column layout: Content left, Globe right — globe shifted left for center alignment */}
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-0 lg:-mr-32">
             
             {/* Left side - Content */}
             <div className="flex-1 text-center lg:text-left">
@@ -191,7 +191,7 @@ export function HeroSection() {
             </div>
 
             {/* Right side - Globe orb */}
-            <div className="relative flex-shrink-0 w-72 h-72 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px] float-animation">
+            <div className="relative flex-shrink-0 w-72 h-72 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px] float-animation" style={{ minHeight: '288px' }}>
               {/* Subtle glow behind orb */}
               <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-[80px]" />
               <div className="absolute inset-0 rounded-full bg-pink-500/10 blur-[100px] translate-x-4" />
