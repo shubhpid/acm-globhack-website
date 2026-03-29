@@ -1,13 +1,14 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { SponsorsGrid } from "@/components/sponsors/sponsors-grid"
+import { SponsorsPageMobile } from "@/components/sponsors/sponsors-page-mobile"
 
 export const metadata = {
   title: "Sponsors | Globehacks 2026",
   description: "Meet the amazing companies supporting Globehacks 2026.",
 }
 
-export default function SponsorsPage() {
+function SponsorsDesktop() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
@@ -38,8 +39,22 @@ export default function SponsorsPage() {
       </section>
 
       <SponsorsGrid />
-
       <Footer />
     </main>
+  )
+}
+
+export default function SponsorsPage() {
+  return (
+    <>
+      <div className="hidden md:block">
+        <SponsorsDesktop />
+      </div>
+      <div className="block md:hidden">
+        <Navigation />
+        <SponsorsPageMobile />
+        <Footer />
+      </div>
+    </>
   )
 }

@@ -44,13 +44,13 @@ function CountdownTimer() {
   ]
 
   return (
-    <div className="flex gap-2 justify-center">
+    <div className="flex gap-1.5 justify-center w-full">
       {timeUnits.map((unit, index) => (
-        <div key={index} className="glass-card rounded-xl px-3 py-2 min-w-[60px] text-center">
-          <div className="text-xl font-bold text-foreground tabular-nums">
+        <div key={index} className="glass-card rounded-lg px-2 py-1.5 flex-1 text-center min-w-0">
+          <div className="text-base font-bold text-foreground tabular-nums leading-none mb-0.5">
             {String(unit.value).padStart(2, "0")}
           </div>
-          <div className="text-[10px] text-muted-foreground">{unit.label}</div>
+          <div className="text-[9px] text-muted-foreground">{unit.label}</div>
         </div>
       ))}
     </div>
@@ -90,7 +90,7 @@ export function HeroSectionMobile() {
               width={160}
               height={160}
               className="object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.35)]"
-              style={{ width: '100%', height: 'auto' }}
+              style={{ width: 160, height: 160 }}
               priority
             />
           </div>

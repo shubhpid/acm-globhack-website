@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { LogisticsPageMobile } from "@/components/logistics/logistics-page-mobile"
 import { 
   MapPin, 
   Calendar, 
@@ -41,7 +42,7 @@ const eligibility = [
   "Valid ID required",
 ]
 
-export default function LogisticsPage() {
+function LogisticsDesktop() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
@@ -175,5 +176,20 @@ export default function LogisticsPage() {
 
       <Footer />
     </main>
+  )
+}
+
+export default function LogisticsPage() {
+  return (
+    <>
+      <div className="hidden md:block">
+        <LogisticsDesktop />
+      </div>
+      <div className="block md:hidden">
+        <Navigation />
+        <LogisticsPageMobile />
+        <Footer />
+      </div>
+    </>
   )
 }

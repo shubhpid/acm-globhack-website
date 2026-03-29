@@ -1,13 +1,14 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { AgendaTimeline } from "@/components/agenda/agenda-timeline"
+import { AgendaPageMobile } from "@/components/agenda/agenda-page-mobile"
 
 export const metadata = {
   title: "Timeline | Globehacks 2026",
   description: "Full schedule for Globehacks 2026 - April 18-19, 2026",
 }
 
-export default function AgendaPage() {
+function AgendaDesktop() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
@@ -40,5 +41,20 @@ export default function AgendaPage() {
       <AgendaTimeline />
       <Footer />
     </main>
+  )
+}
+
+export default function AgendaPage() {
+  return (
+    <>
+      <div className="hidden md:block">
+        <AgendaDesktop />
+      </div>
+      <div className="block md:hidden">
+        <Navigation />
+        <AgendaPageMobile />
+        <Footer />
+      </div>
+    </>
   )
 }

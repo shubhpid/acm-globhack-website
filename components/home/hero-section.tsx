@@ -201,7 +201,7 @@ export function HeroSection() {
                 width={384}
                 height={384}
                 className="object-contain drop-shadow-[0_0_60px_rgba(59,130,246,0.35)]"
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: 384, height: 384 }}
                 priority
                 loading="eager"
               />

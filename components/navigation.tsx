@@ -55,6 +55,7 @@ export function Navigation() {
               width={40}
               height={40}
               priority
+              style={{ width: 40, height: 40 }}
               className="object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"
             />
             <span className="text-sm font-bold tracking-tight font-zen-dots">

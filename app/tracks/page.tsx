@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { TracksPageMobile } from "@/components/tracks/tracks-page-mobile"
 import { 
   Brain, 
   Heart, 
@@ -117,7 +118,7 @@ const tracks = [
   },
 ]
 
-export default function TracksPage() {
+function TracksDesktop() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
@@ -316,5 +317,20 @@ export default function TracksPage() {
 
       <Footer />
     </main>
+  )
+}
+
+export default function TracksPage() {
+  return (
+    <>
+      <div className="hidden md:block">
+        <TracksDesktop />
+      </div>
+      <div className="block md:hidden">
+        <Navigation />
+        <TracksPageMobile />
+        <Footer />
+      </div>
+    </>
   )
 }

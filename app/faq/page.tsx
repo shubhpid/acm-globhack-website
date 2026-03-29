@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { FAQAccordion } from "@/components/faq/faq-accordion"
+import { FAQPageMobile } from "@/components/faq/faq-page-mobile"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -10,7 +11,7 @@ export const metadata = {
   description: "Frequently asked questions about Globehacks 2026 hackathon.",
 }
 
-export default function FAQPage() {
+function FAQDesktop() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
@@ -83,5 +84,22 @@ export default function FAQPage() {
 
       <Footer />
     </main>
+  )
+}
+
+export default function FAQPage() {
+  return (
+    <>
+      {/* Desktop */}
+      <div className="hidden md:block">
+        <FAQDesktop />
+      </div>
+      {/* Mobile */}
+      <div className="block md:hidden">
+        <Navigation />
+        <FAQPageMobile />
+        <Footer />
+      </div>
+    </>
   )
 }
