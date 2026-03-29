@@ -92,7 +92,7 @@ export function HeroSection() {
           alt=""
           width={760}
           height={760}
-          className="w-full h-full object-contain drop-shadow-[0_0_80px_rgba(220,38,127,0.25)]"
+          className="w-full h-auto object-contain drop-shadow-[0_0_80px_rgba(220,38,127,0.25)]"
           priority
           loading="eager"
           sizes="(max-width: 640px) 520px, (max-width: 1024px) 640px, 760px"
@@ -161,10 +161,7 @@ export function HeroSection() {
           {/* Date pill — matches the boxed date in reference */}
           <div className="inline-flex items-center gap-3 glass-card border border-white/15 rounded-2xl px-5 py-3 mb-8">
             <Calendar className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-            <span
-              className="text-lg sm:text-xl font-bold text-foreground tracking-wide"
-              style={{ fontFamily: "var(--font-zen-dots), 'Zen Dots', display" }}
-            >
+            <span className="text-lg sm:text-xl font-bold text-foreground tracking-wide">
               APRIL, 18–19, 2026
             </span>
           </div>
