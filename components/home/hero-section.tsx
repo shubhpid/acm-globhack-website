@@ -118,7 +118,7 @@ export function HeroSection() {
 
               {/* Main title — Zen Dots font */}
               <h1
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 tracking-tight"
                 style={{ fontFamily: "var(--font-zen-dots), 'Zen Dots', display" }}
               >
                 <span className="text-cyan-400">GLOBEHACK</span>

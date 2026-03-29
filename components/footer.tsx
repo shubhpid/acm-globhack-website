@@ -22,6 +22,7 @@ export function Footer() {
                 alt="Globehacks Logo"
                 width={40}
                 height={40}
+                style={{ width: 40, height: 40 }}
                 className="object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"
               />
               <span className="text-xl font-bold tracking-tight">
@@ -112,6 +113,7 @@ export function Footer() {
                     alt="ACM at ASU"
                     width={40}
                     height={40}
+                    style={{ width: 40, height: 40 }}
                     className="object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                   <span>ACM at ASU</span>
@@ -130,6 +132,7 @@ export function Footer() {
                     alt="Global Career Network"
                     width={40}
                     height={40}
+                    style={{ width: 40, height: 40 }}
                     className="object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                   <span>Global Career Network</span>

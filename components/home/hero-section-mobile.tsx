@@ -97,7 +97,7 @@ export function HeroSectionMobile() {
 
           {/* Main title */}
           <h1
-            className="text-4xl font-bold mb-2 tracking-tight text-center"
+            className="text-xl font-bold mb-2 tracking-tight text-center"
             style={{ fontFamily: "var(--font-zen-dots), 'Zen Dots', display" }}
           >
             <span className="text-cyan-400">GLOBEHACK</span>
@@ -133,7 +133,7 @@ export function HeroSectionMobile() {
               rel="noopener noreferrer"
               className="glass-card px-2.5 py-1.5 rounded-full flex items-center gap-1.5"
             >
-              <Image src="/images/acm-asu-logo.png" alt="ACM at ASU" width={20} height={20} className="object-contain" />
+              <Image src="/images/acm-asu-logo.png" alt="ACM at ASU" width={20} height={20} style={{ width: 20, height: 20 }} className="object-contain" />
               <span className="text-[10px] text-muted-foreground">ACM at ASU</span>
             </Link>
             <span className="text-muted-foreground text-xs">×</span>
@@ -143,7 +143,7 @@ export function HeroSectionMobile() {
               rel="noopener noreferrer"
               className="glass-card px-2.5 py-1.5 rounded-full flex items-center gap-1.5"
             >
-              <Image src="/images/gcn-logo.png" alt="GCN" width={20} height={20} className="object-contain" />
+              <Image src="/images/gcn-logo.png" alt="GCN" width={20} height={20} style={{ width: 20, height: 20 }} className="object-contain" />
               <span className="text-[10px] text-muted-foreground">GCN</span>
             </Link>
           </div>
