@@ -500,6 +500,6 @@
 
 /* Zen Dots font for Globehacks branding */
 .font-zen-dots {
-  font-family: var(--font-zen-dots);
+  font-family: var(--font-zen-dots), 'Zen Dots', display !important;
   letter-spacing: 0.05em;
 }
