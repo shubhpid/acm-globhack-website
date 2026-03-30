@@ -1,12 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
-import { KeyRound } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { cn } from '@/lib/utils'
 
 type WorkOSEntryCardProps = {
   actionPath: '/login' | '/register'
@@ -56,12 +52,9 @@ export function WorkOSEntryCard({
   footerHref,
   footerLinkLabel,
   footerText,
-  mode,
   subtitle,
   title,
 }: WorkOSEntryCardProps) {
-  const [email, setEmail] = useState('')
-
   return (
     <div className="mx-auto w-full max-w-4xl">
       <div className="glass-panel rounded-3xl p-6 md:p-8 border border-white/5">
@@ -74,63 +67,13 @@ export function WorkOSEntryCard({
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">{subtitle}</p>
           </div>
 
-          <form
-            action={actionPath}
-            className="space-y-5"
-            method="GET"
-            onSubmit={(event) => {
-              if (disabled) {
-                event.preventDefault()
-              }
-            }}
-          >
-            <div className="space-y-3">
-              <label className="text-left text-lg font-semibold text-white" htmlFor={`${mode}-email`}>
-                Email
-              </label>
-              <div className="relative">
-                <Input
-                  className={cn(
-                    'h-16 rounded-2xl glass-input border-white/10 pl-6 pr-16 text-lg text-white placeholder:text-muted-foreground focus:border-cyan-500/50 focus:ring-cyan-500/20',
-                    disabled && 'opacity-60',
-                  )}
-                  id={`${mode}-email`}
-                  name="email"
-                  onChange={(event) => setEmail(event.target.value)}
-                  placeholder="Your email address"
-                  type="email"
-                  value={email}
-                />
-                <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
-                  <div className="rounded-xl bg-cyan-500/10 p-2 border border-cyan-500/20">
-                    <KeyRound className="h-5 w-5 text-cyan-400" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <Button
-              className="h-14 w-full rounded-2xl bg-cyan-500/90 hover:bg-cyan-500 text-xl font-semibold text-white transition-all duration-300 hover:-translate-y-0.5"
-              disabled={disabled}
-              type="submit"
-            >
-              Continue
-            </Button>
-          </form>
-
           {disabled ? (
             <div className="mt-4 rounded-2xl border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-100">
               WorkOS sign-in is currently unavailable because the required server environment variables are missing.
             </div>
           ) : null}
 
-          <div className="my-8 flex items-center gap-4 text-sm font-medium uppercase tracking-[0.25em] text-muted-foreground">
-            <span className="h-px flex-1 bg-white/10" />
-            <span>OR</span>
-            <span className="h-px flex-1 bg-white/10" />
-          </div>
-
-          <div className="flex flex-col gap-3">
+          <div className="mt-8 flex flex-col gap-3">
             <Button
               asChild={!disabled}
               className="h-14 w-full rounded-2xl glass-card border-white/10 text-lg text-foreground hover:bg-white/5"

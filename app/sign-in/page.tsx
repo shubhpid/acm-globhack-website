@@ -33,7 +33,7 @@ export default async function SignInPage() {
                 Sign in to your <span className="text-amber-400">Globehack</span> profile
               </h1>
               <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Use WorkOS AuthKit to continue with email, Google, or GitHub.
+                Continue with Google or GitHub through WorkOS AuthKit.
               </p>
             </div>
             {user ? (
@@ -62,7 +62,7 @@ export default async function SignInPage() {
                 footerLinkLabel="Sign up"
                 footerText="Don't have an account?"
                 mode="sign-in"
-                subtitle="Your email is passed to WorkOS as a login hint, and social sign-in continues through your configured AuthKit providers."
+                subtitle="Choose Google or GitHub to access your Globehack profile."
                 title="Sign in"
               />
             )}
@@ -88,7 +88,7 @@ export default async function SignInPage() {
             <h1 className="text-2xl font-bold text-white">
               Sign in to your <span className="text-amber-400">Globehack</span> profile
             </h1>
-            <p className="mt-2 text-sm text-muted-foreground">Continue with email, Google, or GitHub.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Continue with Google or GitHub.</p>
           </div>
           {user ? (
             <div className="glass-panel rounded-2xl p-5 text-center border border-white/5">
@@ -105,7 +105,7 @@ export default async function SignInPage() {
               </div>
             </div>
           ) : (
-            <WorkOSEntryCard actionPath="/login" disabled={!isWorkOSConfigured} footerHref="/sign-up" footerLinkLabel="Sign up" footerText="Don't have an account?" mode="sign-in" subtitle="Sign in with your email or a social provider." title="Sign in" />
+            <WorkOSEntryCard actionPath="/login" disabled={!isWorkOSConfigured} footerHref="/sign-up" footerLinkLabel="Sign up" footerText="Don't have an account?" mode="sign-in" subtitle="Choose Google or GitHub to continue." title="Sign in" />
           )}
         </div>
       </main>

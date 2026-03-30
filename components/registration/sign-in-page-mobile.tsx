@@ -27,7 +27,7 @@ export function SignInPageMobile() {
             <span className="text-amber-400">Globehack</span> profile
           </h1>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            Use WorkOS AuthKit to continue with email, Google, or GitHub.
+            Use WorkOS AuthKit to continue with Google or GitHub.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export function SignInPageMobile() {
           footerLinkLabel="Sign up"
           footerText="Don't have an account?"
           mode="sign-in"
-          subtitle="Sign in with your email or a social provider."
+          subtitle="Sign in with Google or GitHub."
           title="Sign in"
         />
       </div>

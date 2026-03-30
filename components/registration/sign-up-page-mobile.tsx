@@ -28,7 +28,7 @@ export function SignUpPageMobile() {
             <span className="text-amber-400">&apos;26</span>
           </h1>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            Sign up with WorkOS to unlock the full application form.
+            Sign up with Google or GitHub to unlock the full application form.
           </p>
         </div>
 
