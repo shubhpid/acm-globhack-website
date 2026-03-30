@@ -40,7 +40,7 @@ export default async function SignUpPage() {
                         </div>
                       </div>
                       <form action={async () => { 'use server'; await signOut({ returnTo: '/' }) }}>
-                        <Button className="h-12 rounded-2xl glass-card border-white/10 px-6 hover:bg-white/5" type="submit" variant="outline">Sign Out</Button>
+                        <Button className="h-12 rounded-2xl glass-card border-white/10 px-6 hover:bg-white/5 transition-transform duration-200 hover:scale-105 cursor-pointer" type="submit" variant="outline">Sign Out</Button>
                       </form>
                     </div>
                   </div>
