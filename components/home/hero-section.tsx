@@ -200,7 +200,7 @@ export function HeroSection() {
                 alt="Globehack 2026 - Energy Orb Logo"
                 width={384}
                 height={384}
-                className="object-contain drop-shadow-[0_0_60px_rgba(59,130,246,0.35)] w-full h-auto max-w-[384px]"
+                className="mr-50 mt-40 object-contain drop-shadow-[0_0_60px_rgba(59,130,246,0.35)] w-auto h-auto max-w-[484px] animate-rotate-slow"
                 priority
                 loading="eager"
               />

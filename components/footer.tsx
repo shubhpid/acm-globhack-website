@@ -33,6 +33,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               Arizona&apos;s first go-to-market hackathon. Building the future, one project at a time.
             </p>
+            {/*
             <div className="flex gap-3">
               {[
                 { icon: Github, href: "#" },
@@ -49,6 +50,7 @@ export function Footer() {
                 </Link>
               ))}
             </div>
+            */}
           </div>
 
           {/* Quick Links */}
@@ -80,6 +82,7 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 { label: "Discord Community", href: "https://discord.gg/PA3XaxjxVH", external: true },
+                { label: "Devpost", href: "https://globehack.devpost.com", external: true },
                 { label: "Register", href: "/sign-up" },
               ].map((link) => (
                 <li key={link.href}>
@@ -122,7 +125,7 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="https://globalcareernetwork.org" 
+                  href="https://gcn-asu.com" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 group"

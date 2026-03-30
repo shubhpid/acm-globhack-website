@@ -1,6 +1,6 @@
 "use client"
 
-import { Clock, MapPin, Users, Coffee, Pizza, Code, Award, Mic, Lightbulb } from "lucide-react"
+import { Clock, MapPin, Users, Coffee, Pizza, Code, Award, Mic, Lightbulb, Sandwich, CloudLightning, DonutIcon, AlarmClock, ShowerHead, WrapTextIcon, VeganIcon, ForkKnife, ForkKnifeCrossed, Pen, Speaker, LucideSpeaker, MonitorSpeakerIcon, Voicemail, Volume1Icon, Volume2Icon } from "lucide-react"
 
 const scheduleDay1 = [
   {
@@ -15,35 +15,71 @@ const scheduleDay1 = [
     title: "Opening Ceremony",
     description: "Welcome address, sponsor introductions, and track reveals.",
     icon: Mic,
-    gradient: "from-blue-500 to-indigo-500",
+    gradient: "from-blue-500 to-purple-500",
   },
+  
   {
-    time: "11:00 AM",
+    time: "10:30 AM",
     title: "Hacking Begins",
     description: "Team formation finalizes and the 24-hour countdown starts!",
     icon: Code,
     gradient: "from-pink-500 to-rose-500",
   },
   {
-    time: "12:30 PM",
-    title: "Lunch",
-    description: "Fuel up with delicious food while networking.",
-    icon: Pizza,
-    gradient: "from-amber-500 to-orange-500",
-  },
-  {
-    time: "2:00 PM",
-    title: "Workshop Sessions",
+    time: "11:30 AM",
+    title: "Workshop #1",
     description: "Technical workshops and mentor office hours.",
     icon: Lightbulb,
     gradient: "from-blue-600 to-cyan-600",
   },
   {
-    time: "7:00 PM",
+    time: "12:00 PM",
+    title: "Lunch",
+    description: "Fuel up with delicious food while networking.",
+    icon: Sandwich,
+    gradient: "from-teal-500 to-green-500",
+  },
+  {
+    time: "12:30 PM",
+    title: "Lofty Workshop",
+    description: "Technical workshops and mentor office hours.",
+    icon: Lightbulb,
+    gradient: "from-blue-600 to-cyan-600",
+  },
+  {
+    time: "1:30 PM",
+    title: "Workshop #3",
+    description: "Technical workshops and mentor office hours.",
+    icon: Lightbulb,
+    gradient: "from-blue-600 to-cyan-600",
+  },
+  {
+    time: "2:30 PM",
+    title: "Trucker Workshop",
+    description: "Technical workshops and mentor office hours.",
+    icon: Lightbulb,
+    gradient: "from-blue-600 to-cyan-600",
+  },
+  {
+    time: "3:30 PM",
+    title: "Coffee Break + Workshop #5",
+    description: "Coffee break followed by a technical workshop.",
+    icon: Coffee,
+    gradient: "from-blue-600 to-cyan-600",
+  },
+  {
+    time: "6:00 PM",
     title: "Dinner",
     description: "Evening dinner break with more networking.",
-    icon: Coffee,
-    gradient: "from-amber-400 to-yellow-500",
+    icon: Pizza,
+    gradient: "from-amber-500 to-orange-500",
+  },
+  {
+    time: "11:00 PM",
+    title: "Progress Checkpoint",
+    description: "Mentor check-ins and mini-pitches to get feedback.",
+    icon: CloudLightning,
+    gradient: "from-gray-500 to-gray-400",
   },
 ]
 
@@ -52,25 +88,46 @@ const scheduleDay2 = [
     time: "9:00 AM",
     title: "Breakfast",
     description: "Morning fuel to power through the final stretch.",
-    icon: Coffee,
-    gradient: "from-amber-500 to-yellow-500",
-  },
-  {
-    time: "10:30 AM",
-    title: "Submissions Due",
-    description: "Final deadline to submit your projects on Devpost.",
-    icon: Clock,
-    gradient: "from-red-500 to-rose-500",
+    icon: DonutIcon,
+    gradient: "from-teal-600 to-green-500",
   },
   {
     time: "11:00 AM",
-    title: "Judging Begins",
+    title: "Submissions Due & Judge Briefing",
+    description: "Final deadline to submit your projects on Devpost.",
+    icon: AlarmClock,
+    gradient: "from-red-500 to-rose-500",
+  },
+  {
+    time: "11:30 AM",
+    title: "Lunch",
+    description: "Enjoy a final meal while judges review submissions.",
+    icon: ForkKnifeCrossed,
+    gradient: "from-red-500 to-rose-500",
+  },
+  {
+    time: "12:00 AM",
+    title: "Presentations & Judging Begins",
     description: "Present your project to judges in 3-minute elevator pitches.",
     icon: Users,
     gradient: "from-blue-500 to-indigo-500",
   },
   {
-    time: "1:00 PM",
+    time: "2:15 PM",
+    title: "Judges Deliberation",
+    description: "While judges deliberate, enjoy snacks, music, and networking.",
+    icon: Pen,
+    gradient: "from-purple-400 to-purple-600",
+  },
+  {
+    time: "2:15 PM - 3:00 PM",
+    title: "Company Keynotes",
+    description: "Hear from our sponsors and industry leaders about the future of tech.",
+    icon:Volume2Icon,
+    gradient: "from-amber-600 to-amber-400",
+  },
+  {
+    time: "3:30 PM",
     title: "Closing Ceremony",
     description: "Winners announced and prizes distributed!",
     icon: Award,

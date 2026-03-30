@@ -71,7 +71,7 @@ export function AboutSection() {
             <span className="text-gradient">Hackathon</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed text-balance">
-            <span className="font-zen-dots text-cyan-400">Globehack</span> 2026 is Arizona&apos;s premier go-to-market hackathon where innovation meets implementation. 
+            <span className="mr-1 font-zen-dots text-cyan-400">Globehack</span>   2026 is Arizona&apos;s premier go-to-market hackathon where innovation meets implementation. 
             Over 24 hours, you&apos;ll build, learn, and connect with a community that values turning ideas into reality.
           </p>
         </div>
