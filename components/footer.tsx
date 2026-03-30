@@ -82,7 +82,8 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 { label: "Discord Community", href: "https://discord.gg/PA3XaxjxVH", external: true },
-                { label: "Devpost", href: "https://globehack.devpost.com", external: true },
+                { label: "Devpost", href: "https://globehack.devpost.com", external: true },  
+                { label: "Sun Devil Central", href: "https://sundevilcentral.eoss.asu.edu/globalcareernetwork/rsvp_boot?id=401832", external: true },
                 { label: "Register", href: "/sign-up" },
               ].map((link) => (
                 <li key={link.href}>

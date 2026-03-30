@@ -21,16 +21,16 @@ export const metadata = {
 }
 
 const venueDetails = [
-  { icon: MapPin, label: "Location", value: "Arizona State University, Tempe Campus", gradient: "from-pink-500 to-rose-500", glowColor: "rgba(236, 72, 153, 0.3)" },
-  { icon: Calendar, label: "Dates", value: "April 18-19, 2026", gradient: "from-cyan-500 to-teal-500", glowColor: "rgba(34, 211, 238, 0.3)" },
-  { icon: Clock, label: "Duration", value: "24 Hours", gradient: "from-blue-500 to-indigo-500", glowColor: "rgba(59, 130, 246, 0.3)" },
-  { icon: Users, label: "Capacity", value: "250 Hackers", gradient: "from-amber-500 to-yellow-500", glowColor: "rgba(250, 204, 21, 0.3)" },
+  { href: "https://maps.app.goo.gl/c411Svv7Ce9MX4Sq8", icon: MapPin, label: "Location", value: "Arizona State University, Tempe Campus, ECG 150", gradient: "from-pink-500 to-rose-500", glowColor: "rgba(236, 72, 153, 0.3)" },
+  { href: "#", icon: Calendar, label: "Dates", value: "April 18-19, 2026", gradient: "from-cyan-500 to-teal-500", glowColor: "rgba(34, 211, 238, 0.3)" },
+  { href: "#", icon: Clock, label: "Duration", value: "24 Hours", gradient: "from-blue-500 to-indigo-500", glowColor: "rgba(59, 130, 246, 0.3)" },
+  { href: "#", icon: Users, label: "Capacity", value: "250+ Hackers", gradient: "from-amber-500 to-yellow-500", glowColor: "rgba(250, 204, 21, 0.3)" },
 ]
 
 const amenities = [
-  { icon: Wifi, label: "High-Speed WiFi", gradient: "from-cyan-500 to-blue-500" },
-  { icon: Coffee, label: "Free Meals & Snacks", gradient: "from-amber-500 to-orange-500" },
-  { icon: Laptop, label: "Power Outlets", gradient: "from-blue-500 to-indigo-500" },
+  { href: "#", icon: Wifi, label: "High-Speed WiFi", gradient: "from-cyan-500 to-blue-500" },
+  { href: "#", icon: Coffee, label: "Free Meals & Snacks", gradient: "from-amber-500 to-orange-500" },
+  { href: "#", icon: Laptop, label: "Power Outlets", gradient: "from-blue-500 to-indigo-500" },
 ]
 
 const eligibility = [
@@ -99,7 +99,7 @@ function LogisticsDesktop() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">{detail.label}</p>
-                      <p className="text-foreground font-medium">{detail.value}</p>
+                      <a href={detail.href}className="text-foreground font-medium">{detail.value}</a>
                     </div>
                   </div>
                 ))}

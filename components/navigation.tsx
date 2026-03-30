@@ -92,8 +92,18 @@ export function Navigation() {
                 </svg>
               </Button>
             </Link>
+            {/* Sun Devil Central */}
+            <Link href="https://globehack.devpost.com" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-muted-foreground hover:text-yellow-400  hover:bg-[#5865F2]/10 flex items-center gap-1.5 cursor-pointer"
+              >
+                SDC
+              </Button>
+            </Link>
             {/* Devpost */}
-            <Link href="https://devpost.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://globehack.devpost.com" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="sm"
@@ -146,7 +156,12 @@ export function Navigation() {
                     Join Discord
                   </Button>
                 </Link>
-                <Link href="https://devpost.com" target="_blank" rel="noopener noreferrer">
+                <Link href="https://sundevilcentral.eoss.asu.edu/globalcareernetwork/rsvp_boot?id=401832" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full border-white/20 text-muted-foreground hover:bg-white/5 rounded-xl cursor-pointer">
+                    SDC
+                  </Button>
+                </Link>
+                <Link href="https://globehack.devpost.com" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full border-white/20 text-muted-foreground hover:bg-white/5 rounded-xl cursor-pointer">
                     Devpost
                   </Button>

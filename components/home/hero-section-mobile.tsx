@@ -164,7 +164,7 @@ export function HeroSectionMobile() {
               </Button>
             </Link>
             <div className="flex gap-2">
-              <Link href="https://devpost.com" target="_blank" rel="noopener noreferrer" className="flex-1">
+              <Link href="https://globehack.devpost.com" target="_blank" rel="noopener noreferrer" className="flex-1">
                 <Button
                   size="sm"
                   variant="outline"

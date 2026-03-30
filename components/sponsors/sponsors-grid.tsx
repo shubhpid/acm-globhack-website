@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 const sponsors = {
-  platinum: [
+  gold: [
     {
       name: "Moatable (Lofty, Trucker)",
       logo: "M",
@@ -21,7 +21,7 @@ const sponsors = {
       website: "https://govector.ai",
     },
   ],
-  gold: [
+  silver: [
     {
       name: "Hydrawav3",
       logo: "H",
@@ -30,7 +30,7 @@ const sponsors = {
       website: "https://www.hydrawav3.com",
     },
   ],
-  silver: [
+  bronze: [
     {
       name: "ISSC Future Self",
       logo: "IF",
@@ -38,7 +38,9 @@ const sponsors = {
       description: "Confirmed Bronze sponsor supporting Globehack.",
       website: "#",
     },
-    {
+    
+  ],
+  community: [{
       name: "ElevenLabs",
       logo: "EL",
       logoPath: "/images/eleven-labs-logo.webp",
@@ -58,9 +60,7 @@ const sponsors = {
       logoPath: "/images/tamagrow-logo.png",
       description: "Confirmed sponsor supporting Globehack.",
       website: "https://tamagrow.app",
-    },
-  ],
-  bronze: [],
+    },],
 }
 
 const partners = [
@@ -79,10 +79,13 @@ const partners = [
 ]
 
 const tierConfig: Record<string, { color: string; label: string; hex?: string }> = {
-  platinum: { color: "#FFDD44", label: "Gold Sponsors", hex: "#000000"},//"#FFDD44" }, // gold
-  gold: { color: "#E0E0E0", label: "Silver Sponsors", hex: "#000000"},//"#F0F0F0" }, // silver
-  silver: { color: "#FC9F52", label: "Bronze Sponsors", hex: "#000000"},//"#FF7F52" }, // bronze
+  gold: { color: "#FFDD44", label: "Gold Sponsors", hex: "#000000"},//"#FFDD44" }, // gold
+  silver: { color: "#E0E0E0", label: "Silver Sponsors", hex: "#000000"},//"#F0F0F0" }, // silver
+  bronze: { color: "#FC9F52", label: "Bronze Sponsors", hex: "#000000"},//"#FF7F52" }, // bronze
+  community: { color: "#6BB2FF", label: "Community Partners", hex: "#000000"},//"#3B82F6" },
   partners: { color: "#6BB2FF", label: "Organizing Partners", hex: "#000000"},//"#3B82F6" },
+  
+  
 }
 
 function SponsorCard({ 
@@ -252,30 +255,40 @@ export function SponsorsGrid() {
 
         {/* Gold */}
         <div className="mb-20">
-          <TierHeader tier="platinum" />
+          <TierHeader tier="gold" />
           <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto md:grid-cols-2">
-            {sponsors.platinum.map((sponsor, index) => (
-              <SponsorCard key={index} sponsor={sponsor} tier="platinum" size="lg" />
+            {sponsors.gold.map((sponsor, index) => (
+              <SponsorCard key={index} sponsor={sponsor} tier="gold" size="lg" />
             ))}
           </div>
         </div>
 
         {/* Silver */}
         <div className="mb-20">
-          <TierHeader tier="gold" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {sponsors.gold.map((sponsor, index) => (
-              <SponsorCard key={index} sponsor={sponsor} tier="gold" size="md" />
+          <TierHeader tier="silver" />
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 justify-items-center max-w-4xl mx-auto mb-20">
+            {sponsors.silver.map((sponsor, index) => (
+              <SponsorCard key={index} sponsor={sponsor} tier="silver" size="md" />
             ))}
           </div>
         </div>
 
         {/* Bronze */}
         <div>
-          <TierHeader tier="silver" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {sponsors.silver.map((sponsor, index) => (
-              <SponsorCard key={index} sponsor={sponsor} tier="silver" size="md" />
+          <TierHeader tier="bronze" />
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 justify-items-center max-w-4xl mx-auto mb-20">
+            {sponsors.bronze.map((sponsor, index) => (
+              <SponsorCard key={index} sponsor={sponsor} tier="bronze" size="md" />
+            ))}
+          </div>
+        </div>
+        
+        {/* Community Partners */}
+        <div className="mb-20">
+          <TierHeader tier="community" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-9 max-w-8xl mx-auto">
+            {sponsors.community.map((sponsor, index) => (
+              <SponsorCard key={index} sponsor={sponsor} tier="community" size="md" />
             ))}
           </div>
         </div>

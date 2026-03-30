@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { MessageCircle, Users, Bell, Hash } from "lucide-react"
 
 export function DiscordSection() {
@@ -57,6 +58,7 @@ export function DiscordSection() {
           </div>
 
           {/* CTA */}
+          <div className="flex flex-col md:flex-row md:space-x-20 space-y-4 md:space-y-0 justify-center">
           <Link 
             href="https://discord.gg/PA3XaxjxVH" 
             target="_blank" 
@@ -72,6 +74,27 @@ export function DiscordSection() {
               Join Discord Server
             </Button>
           </Link>
+          <Link 
+            href="https://sundevilcentral.eoss.asu.edu/globalcareernetwork/rsvp_boot?id=401832" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button 
+              size="lg" 
+              className="bg-[#ffc524] hover:bg-[#f3b610] text-[#AC1D40] text-base md:text-lg font-semibold px-6 md:px-16 py-5 md:py-7 rounded-xl md:rounded-2xl transition-all duration-300 hover:-translate-y-1 w-full md:w-auto shadow-[0_0_12px_#f9da38] hover:shadow-[0_0_20px_#f9da38]"
+            >
+             <Image 
+  src="/images/ASU-logo.png"
+  alt="ASU Logo"
+  width="50"
+  height="50"
+  style={{ objectFit: "contain" }}
+/>
+              Join SDC
+              
+            </Button>
+          </Link>
+          </div>
         </div>
       </div>
     </section>

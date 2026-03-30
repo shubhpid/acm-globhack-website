@@ -163,7 +163,7 @@ export function HeroSection() {
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
-                <Link href="https://devpost.com" target="_blank" rel="noopener noreferrer">
+                <Link href="https://globehack.devpost.com" target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     variant="outline"
