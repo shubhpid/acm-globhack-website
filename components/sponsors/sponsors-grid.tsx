@@ -7,60 +7,53 @@ import Image from "next/image"
 const sponsors = {
   platinum: [
     {
-      name: "TechCorp Global",
-      logo: "TC",
-      description: "Leading provider of cloud infrastructure and developer tools, empowering teams to build scalable applications.",
-      website: "#",
+      name: "Moatable (Lofty, Trucker)",
+      logo: "M",
+      description: "Confirmed Gold sponsor supporting Globehack.",
+      website: "https://www.moatable.com",
+    },
+    {
+      name: "Vector",
+      logo: "V",
+      description: "Confirmed Gold sponsor supporting Globehack.",
+      website: "https://govector.ai",
     },
   ],
   gold: [
     {
-      name: "InnovateLabs",
-      logo: "IL",
-      description: "AI research company focused on making machine learning accessible to developers of all skill levels.",
-      website: "#",
-    },
-    {
-      name: "DevFlow Inc",
-      logo: "DF",
-      description: "Developer productivity platform helping teams ship faster with automated workflows.",
-      website: "#",
+      name: "Hydrawav3",
+      logo: "H",
+      description: "Confirmed Silver sponsor supporting Globehack.",
+      website: "https://www.hydrawav3.com",
     },
   ],
   silver: [
     {
-      name: "CloudScale",
-      logo: "CS",
-      description: "Enterprise cloud solutions for modern applications.",
+      name: "ISSC Future Self",
+      logo: "IF",
+      description: "Confirmed Bronze sponsor supporting Globehack.",
       website: "#",
     },
     {
-      name: "DataStream",
-      logo: "DS",
-      description: "Real-time data analytics and visualization platform.",
-      website: "#",
+      name: "ElevenLabs",
+      logo: "EL",
+      description: "Confirmed sponsor supporting Globehack.",
+      website: "https://elevenlabs.io",
     },
     {
-      name: "SecureNet",
-      logo: "SN",
-      description: "Cybersecurity solutions for startups and enterprises.",
+      name: "InsForge",
+      logo: "IN",
+      description: "Confirmed sponsor supporting Globehack.",
+      website: "https://insforge.dev",
+    },
+    {
+      name: "Tamagrow",
+      logo: "T",
+      description: "Confirmed sponsor supporting Globehack.",
       website: "#",
     },
   ],
-  bronze: [
-    {
-      name: "StartupHub",
-      logo: "SH",
-      description: "Incubator and co-working space for tech startups.",
-      website: "#",
-    },
-    {
-      name: "CodeCraft",
-      logo: "CC",
-      description: "Online learning platform for developers.",
-      website: "#",
-    },
-  ],
+  bronze: [],
 }
 
 const partners = [
@@ -79,10 +72,9 @@ const partners = [
 ]
 
 const tierConfig: Record<string, { color: string; label: string }> = {
-  platinum: { color: "cyan", label: "Platinum Sponsors" },
-  gold: { color: "gold", label: "Gold Sponsors" },
-  silver: { color: "#C0C0C0", label: "Silver Sponsors" },
-  bronze: { color: "#CD7F32", label: "Bronze Sponsors" },
+  platinum: { color: "gold", label: "Gold Sponsors" },
+  gold: { color: "#C0C0C0", label: "Silver Sponsors" },
+  silver: { color: "#CD7F32", label: "Bronze Sponsors" },
   partners: { color: "#3B82F6", label: "Organizing Partners" },
 }
 
@@ -109,6 +101,7 @@ function SponsorCard({
 
   const color = tierConfig[tier].color
   const isVariable = color.startsWith('#') ? false : true
+  const displayColor = isVariable ? `var(--${color})` : color
 
   return (
     <Link 
@@ -137,7 +130,7 @@ function SponsorCard({
           </div>
 
           {/* Name */}
-          <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2 transition-colors group-hover:text-[var(--cyan)]">
+          <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2 transition-colors">
             {sponsor.name}
             <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
           </h3>
@@ -241,17 +234,17 @@ export function SponsorsGrid() {
           </div>
         </div>
 
-        {/* Platinum */}
+        {/* Gold */}
         <div className="mb-20">
           <TierHeader tier="platinum" />
-          <div className="grid grid-cols-1 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto md:grid-cols-2">
             {sponsors.platinum.map((sponsor, index) => (
               <SponsorCard key={index} sponsor={sponsor} tier="platinum" size="lg" />
             ))}
           </div>
         </div>
 
-        {/* Gold */}
+        {/* Silver */}
         <div className="mb-20">
           <TierHeader tier="gold" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -261,22 +254,12 @@ export function SponsorsGrid() {
           </div>
         </div>
 
-        {/* Silver */}
-        <div className="mb-20">
+        {/* Bronze */}
+        <div>
           <TierHeader tier="silver" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {sponsors.silver.map((sponsor, index) => (
               <SponsorCard key={index} sponsor={sponsor} tier="silver" size="md" />
-            ))}
-          </div>
-        </div>
-
-        {/* Bronze */}
-        <div>
-          <TierHeader tier="bronze" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {sponsors.bronze.map((sponsor, index) => (
-              <SponsorCard key={index} sponsor={sponsor} tier="bronze" size="sm" />
             ))}
           </div>
         </div>

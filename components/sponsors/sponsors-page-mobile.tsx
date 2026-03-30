@@ -4,20 +4,20 @@ import { ExternalLink, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const sponsors = {
-  platinum: [{ name: "TechCorp Global", logo: "TC", description: "Leading provider of cloud infrastructure and developer tools.", website: "#" }],
+  platinum: [
+    { name: "Moatable (Lofty, Trucker)", logo: "M", description: "Confirmed Gold sponsor supporting Globehack.", website: "https://www.moatable.com" },
+    { name: "Vector", logo: "V", description: "Confirmed Gold sponsor supporting Globehack.", website: "https://govector.ai" },
+  ],
   gold: [
-    { name: "InnovateLabs", logo: "IL", description: "AI research company making machine learning accessible.", website: "#" },
-    { name: "DevFlow Inc", logo: "DF", description: "Developer productivity platform for faster shipping.", website: "#" },
+    { name: "Hydrawav3", logo: "H", description: "Confirmed Silver sponsor supporting Globehack.", website: "https://www.hydrawav3.com" },
   ],
   silver: [
-    { name: "CloudScale", logo: "CS", description: "Enterprise cloud solutions.", website: "#" },
-    { name: "DataStream", logo: "DS", description: "Real-time analytics platform.", website: "#" },
-    { name: "SecureNet", logo: "SN", description: "Cybersecurity solutions.", website: "#" },
+    { name: "ISSC Future Self", logo: "IF", description: "Confirmed Bronze sponsor supporting Globehack.", website: "#" },
+    { name: "ElevenLabs", logo: "EL", description: "Confirmed sponsor supporting Globehack.", website: "https://elevenlabs.io" },
+    { name: "InsForge", logo: "IN", description: "Confirmed sponsor supporting Globehack.", website: "https://insforge.dev" },
+    { name: "Tamagrow", logo: "T", description: "Confirmed sponsor supporting Globehack.", website: "#" },
   ],
-  bronze: [
-    { name: "StartupHub", logo: "SH", description: "Incubator for tech startups.", website: "#" },
-    { name: "CodeCraft", logo: "CC", description: "Online learning for developers.", website: "#" },
-  ],
+  bronze: [],
 }
 
 const partners = [
@@ -26,17 +26,17 @@ const partners = [
 ]
 
 const tierColors: Record<string, string> = {
-  platinum: "text-cyan-400",
-  gold: "text-amber-400",
-  silver: "text-gray-300",
+  platinum: "text-amber-400",
+  gold: "text-gray-300",
+  silver: "text-orange-400",
   bronze: "text-orange-400",
   partners: "text-blue-400",
 }
 
 const tierGlows: Record<string, string> = {
-  platinum: "rgba(34,211,238,0.15)",
-  gold: "rgba(250,204,21,0.15)",
-  silver: "rgba(192,192,192,0.15)",
+  platinum: "rgba(250,204,21,0.15)",
+  gold: "rgba(192,192,192,0.15)",
+  silver: "rgba(205,127,50,0.15)",
   bronze: "rgba(205,127,50,0.15)",
   partners: "rgba(59,130,246,0.15)",
 }
@@ -83,13 +83,13 @@ export function SponsorsPageMobile() {
         </div>
       </section>
 
-      {/* Platinum */}
+      {/* Gold */}
       <section className="px-4 pb-6">
-        <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${tierColors.platinum}`}>Platinum</p>
+        <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${tierColors.platinum}`}>Gold</p>
         {sponsors.platinum.map((s, i) => (
           <Link key={i} href={s.website} target="_blank" rel="noopener noreferrer">
             <div className="glass-card rounded-xl p-4 text-center" style={{ boxShadow: `0 0 20px ${tierGlows.platinum}` }}>
-              <div className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold text-cyan-400 mx-auto mb-3" style={{ background: "rgba(34,211,238,0.1)", border: "1px solid rgba(34,211,238,0.2)" }}>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold text-amber-400 mx-auto mb-3" style={{ background: "rgba(250,204,21,0.1)", border: "1px solid rgba(250,204,21,0.2)" }}>
                 {s.logo}
               </div>
               <p className="text-sm font-semibold text-foreground">{s.name}</p>
@@ -99,14 +99,14 @@ export function SponsorsPageMobile() {
         ))}
       </section>
 
-      {/* Gold */}
+      {/* Silver */}
       <section className="px-4 pb-6">
-        <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${tierColors.gold}`}>Gold</p>
+        <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${tierColors.gold}`}>Silver</p>
         <div className="flex flex-col gap-2.5">
           {sponsors.gold.map((s, i) => (
             <Link key={i} href={s.website} target="_blank" rel="noopener noreferrer">
               <div className="glass-card rounded-xl p-3.5 flex items-center gap-3" style={{ boxShadow: `0 0 16px ${tierGlows.gold}` }}>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-amber-400 shrink-0" style={{ background: "rgba(250,204,21,0.1)", border: "1px solid rgba(250,204,21,0.2)" }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-gray-300 shrink-0" style={{ background: "rgba(192,192,192,0.1)", border: "1px solid rgba(192,192,192,0.2)" }}>
                   {s.logo}
                 </div>
                 <div>
@@ -119,28 +119,11 @@ export function SponsorsPageMobile() {
         </div>
       </section>
 
-      {/* Silver */}
+      {/* Bronze */}
       <section className="px-4 pb-6">
-        <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${tierColors.silver}`}>Silver</p>
+        <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${tierColors.silver}`}>Bronze</p>
         <div className="grid grid-cols-3 gap-2">
           {sponsors.silver.map((s, i) => (
-            <Link key={i} href={s.website} target="_blank" rel="noopener noreferrer">
-              <div className="glass-card rounded-xl p-3 text-center">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-gray-300 mx-auto mb-2 text-xs" style={{ background: "rgba(192,192,192,0.1)", border: "1px solid rgba(192,192,192,0.2)" }}>
-                  {s.logo}
-                </div>
-                <p className="text-[10px] font-medium text-foreground">{s.name}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Bronze */}
-      <section className="px-4 pb-12">
-        <p className={`text-xs font-bold uppercase tracking-wider mb-3 ${tierColors.bronze}`}>Bronze</p>
-        <div className="grid grid-cols-2 gap-2">
-          {sponsors.bronze.map((s, i) => (
             <Link key={i} href={s.website} target="_blank" rel="noopener noreferrer">
               <div className="glass-card rounded-xl p-3 text-center">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-orange-400 mx-auto mb-2 text-xs" style={{ background: "rgba(205,127,50,0.1)", border: "1px solid rgba(205,127,50,0.2)" }}>
@@ -151,7 +134,9 @@ export function SponsorsPageMobile() {
             </Link>
           ))}
         </div>
+      </section>
 
+      <section className="px-4 pb-12">
         {/* Become a sponsor CTA */}
         <div className="mt-6 glass-panel rounded-2xl p-5 text-center border border-white/5">
           <h2 className="text-base font-bold text-foreground mb-2">Become a Sponsor</h2>
