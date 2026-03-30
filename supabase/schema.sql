@@ -8,6 +8,8 @@ create table if not exists public.applications (
   id uuid primary key default gen_random_uuid(),
   user_id text not null unique,
   email text not null,
+  first_name text not null,
+  last_name text not null,
   major text not null,
   t_shirt_size text not null,
   dietary_preference text not null,
@@ -21,4 +23,3 @@ create table if not exists public.applications (
 );
 
 create index if not exists applications_email_idx on public.applications (email);
-

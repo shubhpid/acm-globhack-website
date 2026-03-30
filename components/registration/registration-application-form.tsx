@@ -21,6 +21,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 
 const checklistItems = [
+  'Your first and last name',
   'Your major or field of study',
   'Resume (PDF, max 1MB)',
   'Dietary restrictions',
@@ -52,6 +53,8 @@ export function RegistrationApplicationForm({
   authenticated,
 }: RegistrationApplicationFormProps) {
   const resumeInputId = useId()
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [major, setMajor] = useState('')
   const [tShirtSize, setTShirtSize] = useState('')
   const [teamPreference, setTeamPreference] = useState('solo')
@@ -77,7 +80,15 @@ export function RegistrationApplicationForm({
       return
     }
 
-    if (!major.trim() || !tShirtSize || !dietaryPreference || !motivation.trim() || !teamPreference) {
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !major.trim() ||
+      !tShirtSize ||
+      !dietaryPreference ||
+      !motivation.trim() ||
+      !teamPreference
+    ) {
       setStatus('Please complete all required fields before submitting.')
       return
     }
@@ -97,6 +108,8 @@ export function RegistrationApplicationForm({
 
     try {
       const formData = new FormData()
+      formData.set('firstName', firstName.trim())
+      formData.set('lastName', lastName.trim())
       formData.set('major', major.trim())
       formData.set('tshirtSize', tShirtSize)
       formData.set('dietaryPreference', dietaryPreference)
@@ -165,6 +178,36 @@ export function RegistrationApplicationForm({
         onSubmit={handleSubmit}
       >
         <div className="grid gap-6 md:grid-cols-2">
+          <div className="space-y-3">
+            <label className="text-lg font-semibold text-white" htmlFor="firstName">
+              First Name *
+            </label>
+            <Input
+              className="h-14 rounded-2xl border-dashed border-[color:rgba(134,163,233,0.45)] bg-[rgba(11,18,34,0.8)] px-5 text-base text-white placeholder:text-zinc-500"
+              id="firstName"
+              name="firstName"
+              onChange={(event) => setFirstName(event.target.value)}
+              placeholder="Enter your first name"
+              required
+              value={firstName}
+            />
+          </div>
+
+          <div className="space-y-3">
+            <label className="text-lg font-semibold text-white" htmlFor="lastName">
+              Last Name *
+            </label>
+            <Input
+              className="h-14 rounded-2xl border-dashed border-[color:rgba(134,163,233,0.45)] bg-[rgba(11,18,34,0.8)] px-5 text-base text-white placeholder:text-zinc-500"
+              id="lastName"
+              name="lastName"
+              onChange={(event) => setLastName(event.target.value)}
+              placeholder="Enter your last name"
+              required
+              value={lastName}
+            />
+          </div>
+
           <div className="space-y-3">
             <label className="text-lg font-semibold text-white" htmlFor="major">
               Major/Field of Study *

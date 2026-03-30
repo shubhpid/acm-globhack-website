@@ -35,6 +35,8 @@ export async function POST(request: Request) {
     const { user } = await withAuth({ ensureSignedIn: true })
     const formData = await request.formData()
 
+    const firstName = readRequiredString(formData, 'firstName')
+    const lastName = readRequiredString(formData, 'lastName')
     const major = readRequiredString(formData, 'major')
     const tShirtSize = readRequiredString(formData, 'tshirtSize')
     const dietaryPreference = readRequiredString(formData, 'dietaryPreference')
@@ -104,6 +106,8 @@ export async function POST(request: Request) {
       {
         user_id: user.id,
         email: user.email,
+        first_name: firstName,
+        last_name: lastName,
         major,
         t_shirt_size: tShirtSize,
         dietary_preference: dietaryPreference,
