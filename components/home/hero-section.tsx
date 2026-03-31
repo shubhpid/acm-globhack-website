@@ -121,8 +121,8 @@ export function HeroSection() {
                 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 tracking-tight"
                 style={{ fontFamily: "var(--font-zen-dots), 'Zen Dots', display" }}
               >
-                <span className="text-cyan-400">GLOBEHACK</span>
-                <span className="text-foreground">&apos;26</span>
+                <span className="text-6xl mr-1 font-zen-dots bg-gradient-to-r from-[#df2a1d] to-cyan-400 bg-clip-text text-transparent">GLOBEHACK&apos;26</span> 
+                
               </h1>
 
               {/* Tagline with accent bar */}

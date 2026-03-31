@@ -58,8 +58,8 @@ export function Navigation() {
               style={{ width: "auto", height: "auto", maxWidth: 40, maxHeight: 40 }}
               className="object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"
             />
-            <span className="text-sm font-bold tracking-tight font-zen-dots">
-              <span className="text-cyan-400">GLOBEHACK</span>
+            <span className="text-lg font-bold tracking-tight font-zen-dots bg-gradient-to-r from-[#df2a1d] to-cyan-400 bg-clip-text text-transparent">
+              Globehack
             </span>
           </Link>
 
@@ -107,7 +107,7 @@ export function Navigation() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-muted-foreground hover:text-white hover:bg-white/10 flex items-center gap-1.5 cursor-pointer"
+                className="text-muted-foreground hover:text-white hover:bg-[#073522] flex items-center gap-1.5 cursor-pointer"
               >
                 <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M6.002 1.61L0 12.004 6.002 22.39h11.996L24 12.004 17.998 1.61zm1.593 4.084h3.947c3.605 0 6.276 1.695 6.276 6.31 0 4.436-3.21 6.302-6.456 6.302H7.595zm2.517 2.449v7.714h1.241c2.646 0 3.862-1.55 3.862-3.861.009-2.569-1.096-3.853-3.767-3.853z"/>

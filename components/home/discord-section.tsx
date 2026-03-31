@@ -34,7 +34,7 @@ export function DiscordSection() {
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed">
             Connect with fellow hackers, find teammates, get help from mentors, and stay updated 
-            on all things <span className="font-zen-dots text-cyan-400">Globehack</span>. Our Discord is the central hub for the hackathon community.
+            on all things <span className="font-zen-dots bg-gradient-to-r from-[#df2a1d] to-cyan-400 bg-clip-text text-transparent">Globehack</span>. Our Discord is the central hub for the hackathon community.
           </p>
 
           {/* Features - darker cards with subtle accents */}

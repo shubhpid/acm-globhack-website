@@ -172,7 +172,7 @@ export function ScheduleSection() {
             <span className="text-gradient">Innovation</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            From opening ceremony to awards, here&apos;s what to expect at <span className="font-zen-dots text-cyan-400">Globehack</span> 2026.
+            From opening ceremony to awards, here&apos;s what to expect at <span className="font-zen-dots bg-gradient-to-r from-[#df2a1d] to-cyan-400 bg-clip-text text-transparent">Globehack</span> 2026.
           </p>
         </div>
 

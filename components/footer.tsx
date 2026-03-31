@@ -149,7 +149,7 @@ export function Footer() {
 
         <div className="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; 2026 <span className="font-zen-dots text-cyan-400">Globehack</span>. All rights reserved.
+            &copy; 2026 <span className="font-zen-dots bg-gradient-to-r from-[#df2a1d] to-cyan-400 bg-clip-text text-transparent">Globehack</span>. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-pink-500 animate-pulse" />

@@ -26,7 +26,7 @@ const tracks = [
     gradient: "from-cyan-500 to-blue-500",
     glowColor: "rgba(34, 211, 238, 0.3)",
     textColor: "text-cyan-400",
-    badge: "Open",
+    badge: "TBA",
     description: "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
     examples: [
       "Natural language processing tools",
@@ -43,7 +43,7 @@ const tracks = [
     gradient: "from-pink-500 to-rose-500",
     glowColor: "rgba(236, 72, 153, 0.3)",
     textColor: "text-pink-400",
-    badge: "Open",
+    badge: "TBA",
     description: "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
     examples: [
       "Accessibility tools",
@@ -60,7 +60,7 @@ const tracks = [
     gradient: "from-amber-500 to-yellow-500",
     glowColor: "rgba(250, 204, 21, 0.3)",
     textColor: "text-amber-400",
-    badge: "Open",
+    badge: "TBA",
     description: "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
     examples: [
       "Beautifully crafted interfaces",
@@ -77,7 +77,7 @@ const tracks = [
     gradient: "from-blue-500 to-indigo-500",
     glowColor: "rgba(59, 130, 246, 0.3)",
     textColor: "text-blue-400",
-    badge: "Open",
+    badge: "TBA",
     description: "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
     examples: [
       "Unique technology combinations",
@@ -94,7 +94,7 @@ const tracks = [
     gradient: "from-teal-500 to-cyan-500",
     glowColor: "rgba(20, 184, 166, 0.3)",
     textColor: "text-teal-400",
-    badge: "Open",
+    badge: "TBA",
     description: "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
     examples: [
       "Any project from first-time teams",
@@ -109,6 +109,30 @@ const tracks = [
     title: "Secret Track",
     icon: Lock,
     gradient: "from-purple-400 to-purple-900",
+    glowColor: "rgba(107, 114, 128, 0.2)",
+    textColor: "text-gray-400",
+    badge: "TBA",
+    description: "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+    examples: ["???", "???", "???", "???"],
+    revealed: false,
+  },
+  {
+    id: "new track",
+    title: "Secret Track",
+    icon: Lock,
+    gradient: "from-gray-400 to-gray-900",
+    glowColor: "rgba(107, 114, 128, 0.2)",
+    textColor: "text-gray-400",
+    badge: "TBA",
+    description: "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------",
+    examples: ["???", "???", "???", "???"],
+    revealed: false,
+  },
+  {
+    id: "new track 2",
+    title: "Secret Track",
+    icon: Lock,
+    gradient: "from-teal-400 to-green-700",
     glowColor: "rgba(107, 114, 128, 0.2)",
     textColor: "text-gray-400",
     badge: "TBA",
@@ -256,7 +280,7 @@ function TracksDesktop() {
         <div className="orb orb-red w-[250px] h-[250px] top-1/3 -right-24 opacity-30" />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          {/*<div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               How Track Judging Works
             </h2>
@@ -299,7 +323,7 @@ function TracksDesktop() {
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
-          </div>
+          </div>*/}
 
           <div className="text-center">
             <Link href="/register">

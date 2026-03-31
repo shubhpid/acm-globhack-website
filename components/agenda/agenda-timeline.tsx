@@ -104,13 +104,7 @@ const saturdayEvents = [
     icon: ClipboardCheck,
     color: "#c566b5",
   },
-  {
-    time: "11:30 PM",
-    title: "Overnight Hacking",
-    description: "A quiet zone and rest area are provided, with snacks and energy drinks available to sustain teams through the night.",
-    icon: Moon,
-    color: "#d8539f",
-  },
+  
 ]
 
 const sundayEvents = [

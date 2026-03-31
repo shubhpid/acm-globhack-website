@@ -60,6 +60,10 @@ const faqs = [
     glowColor: "rgba(250, 204, 21, 0.5)",
     questions: [
       {
+        q: "Do I need to register on both SDC and the website? What's the difference between them?",
+        a: "Yes—both serve different purposes. Registering on SDC is used for attendance tracking during the event. Registering on the website, on the other hand, officially signs you up as a participant in a specific track. You'll need to complete both to fully participate and be properly accounted for.",
+      },
+      {
         q: "What should I bring?",
         a: "Essential items include your laptop and charger, a valid photo ID, and comfortable clothes. Optional items include toiletries, a sleeping bag or blanket for the overnight portion, headphones, and any hardware you plan to use for your project.",
       },
@@ -67,10 +71,7 @@ const faqs = [
         q: "Will food be provided?",
         a: "Yes! We provide all meals including breakfast, lunch, and dinner, plus snacks and drinks throughout the event. We accommodate common dietary restrictions—please indicate any in your registration form.",
       },
-      {
-        q: "Can I sleep at the venue?",
-        a: "Yes! We have designated quiet zones and rest areas for participants who want to take breaks during the overnight hacking period. We recommend bringing a sleeping bag or blanket for comfort.",
-      },
+      
       
     ],
   },

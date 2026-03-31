@@ -32,7 +32,7 @@ function SponsorsDesktop() {
             <span className="text-amber-400 text-glow-gold">Sponsors</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            <span className="font-zen-dots text-cyan-400">Globehack</span> 2026 is made possible by the generous support of our sponsors.
+            <span className="font-zen-dots bg-gradient-to-r from-[#df2a1d] to-cyan-400 bg-clip-text text-transparent">Globehack</span> 2026 is made possible by the generous support of our sponsors.
             These industry leaders share our vision of empowering the next generation of innovators.
           </p>
         </div>

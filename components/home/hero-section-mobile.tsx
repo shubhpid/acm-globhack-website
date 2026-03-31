@@ -89,6 +89,7 @@ export function HeroSectionMobile() {
               alt="Globehack 2026"
               width={160}
               height={160}
+              style={{ width: "auto", height: "auto"}}
               className="object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.35)] w-full h-auto max-w-[160px]"
               priority
             />
