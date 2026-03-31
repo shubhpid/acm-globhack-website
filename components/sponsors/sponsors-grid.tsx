@@ -158,7 +158,7 @@ function SponsorCard({
           {/* Name */}
           <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2 transition-colors">
             {sponsor.name}
-            <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <ExternalLink className="h-4 w-4 transition-opacity" />
           </h3>
 
           {/* Description */}
@@ -202,7 +202,7 @@ function PartnerCard({
           {/* Name */}
           <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2 transition-colors group-hover:text-[var(--cyan)]">
             {partner.name}
-            <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <ExternalLink className="h-4 w-4 transition-opacity" />
           </h3>
 
           {/* Description */}

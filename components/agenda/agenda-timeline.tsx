@@ -50,7 +50,7 @@ const saturdayEvents = [
   },
   {
     time: "11:30 AM",
-    title: "Vecor AI Workshop #1",
+    title: "Vector AI Workshop #1",
     description: "Optional sessions covering APIs, UI/UX, and pitching tips.",
     icon: Lightbulb,
     color: "#32a5f4",
@@ -71,7 +71,7 @@ const saturdayEvents = [
   },
   {
     time: "1:30 PM",
-    title: "Vecor AI Workshop #2",
+    title: "Vector AI Workshop #2",
     description: "Optional sessions covering APIs, UI/UX, and pitching tips.",
     icon: Lightbulb,
     color: "#5780ee",
