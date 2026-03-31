@@ -1,10 +1,29 @@
 "use client"
 
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, Instagram, Lock } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
+const SPONSOR_REVEAL_DATE = new Date("2026-04-06T00:00:00")
+const sponsorsRevealed = new Date() >= SPONSOR_REVEAL_DATE
+
 const sponsors = {
+  drink: [
+    {
+      name: "Olipop",
+      logo: "O",
+      logoPath: "/images/olipop-logo.png",
+      description: "Olipop is supporting Globehack as a drink sponsor with better-for-you soda for participants.",
+      website: "https://drinkolipop.com",
+    },
+    {
+      name: "Red Bull",
+      logo: "RB",
+      logoPath: "/images/redbull-logo.png",
+      description: "Red Bull is supporting Globehack as a drink sponsor to help keep participants energized throughout the event.",
+      website: "https://www.redbull.com",
+    },
+  ],
   gold: [
     {
       name: "Lofty",
@@ -76,16 +95,21 @@ const partners = [
     logo: "/images/acm-asu-logo.png",
     description: "The Association for Computing Machinery student chapter at Arizona State University.",
     website: "https://asu.acm.org",
+    discord: "https://discord.gg/Vsr5f6kVH",
+    instagram: "https://www.instagram.com/acm.asu/",
   },
   {
     name: "Global Career Network",
     logo: "/images/gcn-logo.png",
     description: "Connecting students with global career opportunities and professional development.",
     website: "https://gcn-asu.com/",
+    discord: "https://discord.gg/9Rvq2A3N",
+    instagram: "https://www.instagram.com/gcn.asu/",
   },
 ]
 
 const tierConfig: Record<string, { color: string; label: string; hex?: string }> = {
+  drink: { color: "#22C55E", label: "Drink Sponsor", hex: "#000000"},
   gold: { color: "#FFDD44", label: "Gold Sponsors", hex: "#000000"},//"#FFDD44" }, // gold
   silver: { color: "#E0E0E0", label: "Silver Sponsors", hex: "#000000"},//"#F0F0F0" }, // silver
   bronze: { color: "#FC9F52", label: "Bronze Sponsors", hex: "#000000"},//"#FF7F52" }, // bronze
@@ -95,11 +119,19 @@ const tierConfig: Record<string, { color: string; label: string; hex?: string }>
   
 }
 
-function SponsorCard({ 
-  sponsor, 
+function DiscordGlyph({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M20.317 4.369A19.791 19.791 0 0 0 15.885 3c-.191.328-.403.769-.552 1.116a18.27 18.27 0 0 0-6.666 0A11.64 11.64 0 0 0 8.115 3a19.736 19.736 0 0 0-4.433 1.369C.873 8.58.11 12.687.492 16.742a19.9 19.9 0 0 0 5.239 2.672c.424-.574.802-1.18 1.127-1.817-.62-.233-1.214-.52-1.775-.857.149-.108.294-.22.434-.337 3.425 1.612 7.14 1.612 10.525 0 .141.116.286.229.434.337-.56.337-1.156.624-1.776.857.325.637.704 1.243 1.128 1.817a19.867 19.867 0 0 0 5.24-2.672c.444-4.699-.763-8.768-3.175-12.373ZM9.349 14.269c-1.02 0-1.855-.936-1.855-2.084 0-1.149.816-2.085 1.855-2.085 1.049 0 1.873.945 1.855 2.085 0 1.148-.816 2.084-1.855 2.084Zm5.302 0c-1.02 0-1.854-.936-1.854-2.084 0-1.149.816-2.085 1.854-2.085 1.05 0 1.874.945 1.856 2.085 0 1.148-.816 2.084-1.856 2.084Z" />
+    </svg>
+  )
+}
+
+function SponsorCard({
+  sponsor,
   tier,
-  size = "md" 
-}: { 
+  size = "md",
+}: {
   sponsor: { name: string; logo: string; description: string; website: string; logoPath?: string }
   tier: string
   size?: "lg" | "md" | "sm"
@@ -118,25 +150,25 @@ function SponsorCard({
 
   const color = tierConfig[tier].color
   const hexGlow = tierConfig[tier].hex || "#000";
-  const displayColor = color;
-
   return (
-    <Link 
-      href={sponsor.website}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={sponsorsRevealed ? sponsor.website : "#"}
+      target={sponsorsRevealed ? "_blank" : undefined}
+      rel={sponsorsRevealed ? "noopener noreferrer" : undefined}
       className="group block h-full"
     >
-      <div 
-        className={`glass-card glass-card-hover rounded-2xl ${sizeClasses[size]} transition-all duration-500 h-full`}
+      <div
+        className={`group relative glass-card rounded-2xl ${sizeClasses[size]} transition-all duration-500 h-full overflow-hidden ${
+          sponsorsRevealed ? "glass-card-hover" : "border-dashed opacity-70"
+        }`}
       >
-        <div className="flex flex-col items-center text-center h-full">
+        <div className={`flex flex-col items-center text-center h-full ${!sponsorsRevealed ? "blur-xl scale-[1.02] opacity-40" : ""}`}>
           {/* Logo placeholder */}
-          <div 
+          <div
             className={`${logoSizes[size]} rounded-2xl flex items-center justify-center mb-6 font-bold transition-transform duration-300 group-hover:scale-110`}
-            style={{ 
-              background: "#000",
-              border: "1px solid #000",
+            style={{
+              background: "#fff",
+              border: "1px solid rgba(255,255,255,0.15)",
               color: "#fff",
             }}
           >
@@ -146,7 +178,7 @@ function SponsorCard({
                 alt={sponsor.name + " logo"}
                 width={64}
                 height={64}
-                className="object-contain w-full h-full rounded-md"
+                className="object-contain w-full h-full rounded-md bg-white"
                 style={{ boxShadow: `0 0 10px 4px ${hexGlow}50` }}
                 unoptimized
               />
@@ -168,6 +200,19 @@ function SponsorCard({
             </p>
           )}
         </div>
+
+        {!sponsorsRevealed && (
+          <div className="absolute inset-0 rounded-2xl bg-[rgba(12,12,22,0.72)] backdrop-blur-xl flex items-center justify-center">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 rounded-full bg-[rgba(30,30,46,0.88)] border border-white/10 flex items-center justify-center mx-auto mb-4 shadow-[0_0_24px_rgba(255,255,255,0.08)]">
+                <Lock className="h-8 w-8 text-white/85" />
+              </div>
+              <p className="text-sm text-white/90 font-semibold tracking-wide">
+                Revealed on April 6th
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </Link>
   )
@@ -176,15 +221,10 @@ function SponsorCard({
 function PartnerCard({ 
   partner 
 }: { 
-  partner: { name: string; logo: string; description: string; website: string }
+  partner: { name: string; logo: string; description: string; website: string; discord?: string; instagram?: string }
 }) {
   return (
-    <Link 
-      href={partner.website}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block h-full"
-    >
+    <div className="group block h-full">
       <div className="glass-card glass-card-hover rounded-2xl p-8 transition-all duration-500 h-full">
         <div className="flex flex-col items-center text-center h-full">
           {/* Actual logo */}
@@ -200,10 +240,37 @@ function PartnerCard({
           </div>
 
           {/* Name */}
-          <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2 transition-colors group-hover:text-[var(--cyan)]">
+          <Link
+            href={partner.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2 transition-colors hover:text-blue-400"
+          >
             {partner.name}
             <ExternalLink className="h-4 w-4 transition-opacity" />
-          </h3>
+          </Link>
+
+          <div className="mb-4 flex items-center gap-4 text-white/90">
+            <Link
+              href={partner.discord || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${partner.name} Discord`}
+              className="inline-flex items-center justify-center transition-colors duration-200 hover:text-blue-400"
+            >
+              <DiscordGlyph className="h-6 w-6" />
+            </Link>
+            <span className="h-8 w-px rounded-full bg-white/30" />
+            <Link
+              href={partner.instagram || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${partner.name} Instagram`}
+              className="inline-flex items-center justify-center transition-colors duration-200 hover:text-blue-400"
+            >
+              <Instagram className="h-6 w-6" />
+            </Link>
+          </div>
 
           {/* Description */}
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -211,7 +278,7 @@ function PartnerCard({
           </p>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
 
@@ -296,6 +363,16 @@ export function SponsorsGrid() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-9 max-w-8xl mx-auto">
             {sponsors.community.map((sponsor, index) => (
               <SponsorCard key={index} sponsor={sponsor} tier="community" size="md" />
+            ))}
+          </div>
+        </div>
+
+        {/* Drink Sponsor */}
+        <div className="mb-20">
+          <TierHeader tier="drink" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {sponsors.drink.map((sponsor, index) => (
+              <SponsorCard key={index} sponsor={sponsor} tier="drink" size="md" />
             ))}
           </div>
         </div>
