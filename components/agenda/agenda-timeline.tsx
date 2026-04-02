@@ -165,7 +165,7 @@ export function AgendaTimeline() {
   const events = activeDay === "saturday" ? saturdayEvents : sundayEvents
   const dayTitle = activeDay === "saturday" 
     ? "Saturday, April 18 — Kickoff & Development at LSE 104" 
-    : "Sunday, April 19 — The Finish Line at ECG 150"
+    : "Sunday, April 19 — The Finish Line at ECG 101"
 
   return (
     <section className="py-20 relative">
