@@ -37,7 +37,7 @@ const teamOptions = [
     value: 'solo',
   },
   {
-    description: 'Get matched with or find an existing team',
+    description: 'Get matched with or find an existing team. (Teams are created on the Devpost project submission!)',
     label: 'Finding a Team',
     value: 'finding-team',
   },

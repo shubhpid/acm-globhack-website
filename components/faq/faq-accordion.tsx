@@ -41,6 +41,10 @@ const faqs = [
         a: "No! You can register as an individual and find teammates at the event. We'll have team formation activities during registration on Saturday morning. Teams can have 1-5 members.",
       },
       {
+        q: "Is there a platform where I should create my team?",
+        a: "Teams are created on the Devpost project submission page. You can either create a new team or join an existing one during the hackathon. We encourage participants to connect and form teams during the event, but you can also come with a pre-formed team if you prefer.",
+      },
+      {
         q: "What can I build?",
         a: "You can build anything that fits within one of our tracks! We encourage projects that demonstrate market potential and real-world applicability. This can include web apps, mobile apps, hardware projects, AI/ML solutions, and more. All projects must be started from scratch during the hackathon.",
       },
