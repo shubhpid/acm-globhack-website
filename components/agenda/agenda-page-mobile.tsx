@@ -116,13 +116,13 @@ const sundayEvents = [
   },
   {
     time: "11:00 AM",
-    title: "Project Submission Deadline & Judge Briefing",
-    description: "Strict cutoff for submitting code repository links and pitch decks via Devpost. Judges receive their briefing during this time.",
+    title: "Project Submission Deadline",
+    description: "Strict cutoff for submitting code repository links and pitch decks via Devpost.",
     icon: AlarmClock,
     color: "#2cb8f2",
   },
   {
-    time: "11:30 AM",
+    time: "11:15 AM",
     title: "Lunch",
     description: "Enjoy a final meal while judges review submissions.",
     icon: ForkKnifeCrossed,
@@ -150,7 +150,7 @@ const sundayEvents = [
     color: "#b36ec1",
   },
   {
-    time: "3:00 PM",
+    time: "3:30 PM",
     title: "Closing Ceremony & Awards",
     description: "Winner announcements, sponsor thank-yous, and a final group photo to conclude the event.",
     icon: Trophy,

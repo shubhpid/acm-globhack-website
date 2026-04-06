@@ -151,7 +151,7 @@ const sundayEvents = [
     color: "#b36ec1",
   },
   {
-    time: "3:00 PM",
+    time: "3:30 PM",
     title: "Closing Ceremony & Awards",
     description: "Winner announcements, sponsor thank-yous, and a final group photo to conclude the event.",
     icon: Trophy,
