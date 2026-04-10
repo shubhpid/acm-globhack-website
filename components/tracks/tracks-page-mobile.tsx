@@ -173,6 +173,9 @@ export function TracksPageMobile() {
       {/* Tracks list */}
       <section className="px-4 pb-8">
         <div className="flex flex-col gap-3">
+          <h2 className="text-2xl font-bold text-foreground mb-8">
+                  Main Tracks
+                </h2>
           {tracks.map((track) => (
             <div
               key={track.id}
@@ -198,7 +201,13 @@ export function TracksPageMobile() {
                   className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-gradient-to-br ${track.gradient}`}
                   style={{ boxShadow: `0 4px 16px ${track.glowColor}` }}
                 >
-                  <track.icon className="h-5 w-5 text-white" />
+                  <Image
+                    src={track.logo}
+                    alt={track.title}
+                    width={640}
+                    height={640}
+                    className="rounded-sm"
+                  />
                 </div>
                 <h3 className="text-base font-semibold text-foreground pr-12">{track.title}</h3>
               </div>
@@ -211,54 +220,7 @@ export function TracksPageMobile() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="px-4 pb-12">
-        <div className="glass-panel rounded-2xl p-5 border border-white/5">
-          <h2 className="text-base font-bold text-foreground mb-4 text-center">
-            How Track Judging Works
-          </h2>
-          <div className="flex flex-col gap-3">
-            {[
-              {
-                step: "1",
-                title: "Build Your Project",
-                desc: "One project can qualify for multiple tracks.",
-                gradient: "from-cyan-500 to-teal-500",
-              },
-              {
-                step: "2",
-                title: "Submit & Tag",
-                desc: "Select all applicable tracks on Devpost.",
-                gradient: "from-blue-500 to-indigo-500",
-              },
-              {
-                step: "3",
-                title: "Get Judged",
-                desc: "Judges evaluate per track with separate criteria.",
-                gradient: "from-amber-500 to-yellow-500",
-              },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div
-                  className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 bg-gradient-to-br ${item.gradient}`}
-                >
-                  <span className="text-sm font-bold text-white">{item.step}</span>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{item.title}</p>
-                  <p className="text-xs text-muted-foreground">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <Link href="/register" className="block mt-5">
-            <Button size="sm" className="glass-button text-white rounded-xl w-full py-5 group">
-              Register to Compete
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+      
       {/* Side Tracks */}
             <section className="py-20">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -343,6 +305,54 @@ export function TracksPageMobile() {
                 </div>
               </div>
             </section>
+            {/* How it works */}
+      <section className="px-4 pb-12">
+        <div className="glass-panel rounded-2xl p-5 border border-white/5">
+          <h2 className="text-base font-bold text-foreground mb-4 text-center">
+            How Track Judging Works
+          </h2>
+          <div className="flex flex-col gap-3">
+            {[
+              {
+                step: "1",
+                title: "Build Your Project",
+                desc: "One project can qualify for multiple tracks.",
+                gradient: "from-cyan-500 to-teal-500",
+              },
+              {
+                step: "2",
+                title: "Submit & Tag",
+                desc: "Select all applicable tracks on Devpost.",
+                gradient: "from-blue-500 to-indigo-500",
+              },
+              {
+                step: "3",
+                title: "Get Judged",
+                desc: "Judges evaluate per track with separate criteria.",
+                gradient: "from-amber-500 to-yellow-500",
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-3">
+                <div
+                  className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 bg-gradient-to-br ${item.gradient}`}
+                >
+                  <span className="text-sm font-bold text-white">{item.step}</span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                  <p className="text-xs text-muted-foreground">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Link href="/register" className="block mt-5">
+            <Button size="sm" className="glass-button text-white rounded-xl w-full py-5 group">
+              Register to Compete
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
+        </div>
+      </section>
       
     </main>
   )
