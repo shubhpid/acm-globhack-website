@@ -82,7 +82,7 @@ const sponsors = {
     {
       name: "Tamagrow",
       logo: "T",
-      logoPath: "/images/tamagrow-logo.png",
+      logoPath: "/images/tamagrow-logo.jpg",
       description: "Tamagrow is a leading provider of innovative solutions for the modern workforce. Tamagrow monitors your GitHub commits and RSS feeds, then drafts posts for social media.",
       website: "https://tamagrow.app",
     },
@@ -152,13 +152,13 @@ function SponsorCardMobile({ sponsor, tier }: { sponsor: any; tier: string }) {
       >
         <div className={!sponsorsRevealed ? "blur-xl scale-[1.02] opacity-35" : ""}>
           {sponsor.logoPath ? (
-            <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center rounded-xl overflow-hidden bg-white border border-white/20">
+            <div className="w-14 h-14 mx-auto mb-2 flex items-center justify-center rounded-xl overflow-hidden bg-[#000000] border border-[#000000]">
               <Image
                 src={sponsor.logoPath}
                 alt={sponsor.name}
                 width={56}
                 height={56}
-                className="object-contain w-full h-full bg-white"
+                className="object-contain w-full h-full bg-[#000000]"
               />
             </div>
           ) : (

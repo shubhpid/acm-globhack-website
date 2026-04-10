@@ -21,8 +21,8 @@ export const metadata = {
 }
 
 const venueDetails = [
-  { href: "https://maps.app.goo.gl/sKu1942SYTb4tYR9A", icon: MapPin, label: "Location Day #1", value: "Arizona State University, Tempe Campus, LSE 104", gradient: "from-pink-500 to-rose-600", glowColor: "rgba(236, 72, 153, 0.3)", underline: true },
-  { href: "https://maps.app.goo.gl/c411Svv7Ce9MX4Sq8", icon: MapPin, label: "Location Day #2", value: "Arizona State University, Tempe Campus, ECG 101", gradient: "from-pink-500 to-rose-600", glowColor: "rgba(236, 72, 153, 0.3)", underline: true },
+  { href: "https://maps.app.goo.gl/sKu1942SYTb4tYR9A", icon: MapPin, label: "Location & Workshop Day #1", value: "Arizona State University, Tempe Campus, LSE 104", gradient: "from-pink-500 to-rose-600", glowColor: "rgba(236, 72, 153, 0.3)", underline: true },
+  { href: "https://maps.app.goo.gl/c411Svv7Ce9MX4Sq8", icon: MapPin, label: "Location & Workshop Day #2", value: "Arizona State University, Tempe Campus, ECG 101", gradient: "from-pink-500 to-rose-600", glowColor: "rgba(236, 72, 153, 0.3)", underline: true },
   { href: "#", icon: Calendar, label: "Dates", value: "April 18-19, 2026", gradient: "from-cyan-500 to-teal-600", glowColor: "rgba(34, 211, 238, 0.3)", underline: false },
   { href: "#", icon: Clock, label: "Duration", value: "24 Hours", gradient: "from-blue-500 to-indigo-600", glowColor: "rgba(59, 130, 246, 0.3)", underline: false },
   { href: "#", icon: Users, label: "Capacity", value: "250+ Hackers", gradient: "from-amber-500 to-yellow-600", glowColor: "rgba(250, 204, 21, 0.3)", underline: false },

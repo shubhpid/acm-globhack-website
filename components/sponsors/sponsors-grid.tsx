@@ -83,7 +83,7 @@ const sponsors = {
     {
       name: "Tamagrow",
       logo: "T",
-      logoPath: "/images/tamagrow-logo.png",
+      logoPath: "/images/tamagrow-logo.jpg",
       description: "Tamagrow is a leading provider of innovative solutions for the modern workforce. Tamagrow monitors your GitHub commits and RSS feeds, then drafts posts for social media.",
       website: "https://tamagrow.app",
     },],
