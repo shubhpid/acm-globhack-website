@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzGIoB70JgpkcYRnSeQ_jGgc95zo2j9zzlnmihsK1VLJSC3F5ckT9Hc8I6wW4I6PHM3/exec";
+  "https://script.google.com/macros/s/AKfycbzs4JcHNb844hFWiNvp3EKdvL9-rOG0tllVMfXcLDgH4ItvulmAWLtnqfkkF86KX3Bi/exec";
 
 export default function ScannerPage() {
   const scannerRef = useRef<Html5Qrcode | null>(null);
@@ -14,6 +14,8 @@ export default function ScannerPage() {
   const [locked, setLocked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [checkedIn, setCheckedIn] = useState<boolean | null>(null);
+  const [checkinLoading, setCheckinLoading] = useState(false);
 
   let lastScan = useRef(0);
 
@@ -34,6 +36,7 @@ export default function ScannerPage() {
         setUser(null);
         setScannedId(decodedText);
         setLocked(false);
+        setCheckedIn(null);
 
         try {
           const res = await fetch(SCRIPT_URL, {
@@ -52,10 +55,12 @@ export default function ScannerPage() {
           if (!data.success) {
             setError(data.error);
             setLoading(false);
+            setCheckedIn(null);
             return;
           }
 
           setUser(data.user);
+          setCheckedIn(data.checked_in ?? null);
 
           // 🔊 sound
           new Audio("/confirmed.mp3").play();
@@ -132,9 +137,39 @@ export default function ScannerPage() {
     setError("");
     setLocked(false);
     setLoading(false);
+    setCheckedIn(null);
+    setCheckinLoading(false);
 
     await stopScanner();
     await startScanner();
+  };
+
+  // 🟢 CHECK-IN PARTICIPANT
+  const checkInParticipant = async () => {
+    if (!user || !scannedId) return;
+    setCheckinLoading(true);
+    setError("");
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify({
+          id: scannedId,
+          action: "checkin",
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setCheckedIn(true);
+      } else {
+        setError(data.error || "Check-in failed");
+      }
+    } catch (err) {
+      setError("Check-in failed");
+    }
+    setCheckinLoading(false);
   };
 
   return (
@@ -166,6 +201,29 @@ export default function ScannerPage() {
           <p>
             <strong>Meals Left:</strong> {user.meals_left}
           </p>
+
+          {/* CHECK-IN STATUS */}
+          {checkedIn !== null && (
+            <p className="text-green-600 font-semibold">
+              {checkedIn ? "User-checked in" : "User not checked in"}
+            </p>
+          )}
+
+          {/* CHECK-IN BUTTON */}
+          {!checkedIn && checkedIn !== null && (
+            <button
+              onClick={checkInParticipant}
+              disabled={checkinLoading}
+              className="
+                mt-3 w-full py-2 rounded-xl text-white font-semibold
+                bg-green-600 shadow-lg shadow-green-400/60
+                hover:bg-green-700 transition
+                disabled:opacity-50 disabled:cursor-not-allowed
+              "
+            >
+              {checkinLoading ? "Checking In..." : "Check - In Participant"}
+            </button>
+          )}
 
           {/* CONFIRM */}
           <button
