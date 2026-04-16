@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxzS2PuRCabbZZburyAajctymZmxinVc7EyaKgWWY7iGRzEbeXAhLx0YtVoVsrDJ4nI/exec";
+  "https://script.google.com/macros/s/AKfycbxAmi0zVD5nyvQ3zF5DARekAgYELUidil7E98HZS-cR4FbGhaDrxeYsqjTStKz19MKfIg/exec";
 
 export default function ScannerPage() {
   const scannerRef = useRef<Html5Qrcode | null>(null);
