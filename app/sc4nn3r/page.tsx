@@ -212,6 +212,9 @@ export default function ScannerPage() {
             <strong>Major:</strong> {user.major}
           </p>
           <p>
+            <strong>T-Shirt Size:</strong> {user.tshirt_size}
+          </p>
+          <p>
             <strong>Diet:</strong> {user.dietary_preference}
           </p>
           <p>
