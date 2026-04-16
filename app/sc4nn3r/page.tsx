@@ -39,7 +39,30 @@ export default function ScannerPage() {
         setCheckedIn(null);
 
         try {
-          const res = await fetch(SCRIPT_URL, {
+          // 1. Check if user is registered (Sheet2)
+          const res2 = await fetch(SCRIPT_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+            body: JSON.stringify({
+              id: decodedText,
+              action: "fetch_checkedin",
+            }),
+          });
+          const data2 = await res2.json();
+
+          if (data2.success && data2.user) {
+            setUser(data2.user);
+            setCheckedIn(true);
+            new Audio("/confirmed.mp3").play();
+            await stopScanner();
+            setLoading(false);
+            return;
+          }
+
+          // 2. If not registered, pull from Sheet1
+          const res1 = await fetch(SCRIPT_URL, {
             method: "POST",
             headers: {
               "Content-Type": "text/plain;charset=utf-8",
@@ -49,24 +72,20 @@ export default function ScannerPage() {
               action: "fetch",
             }),
           });
+          const data1 = await res1.json();
 
-          const data = await res.json();
-
-          if (!data.success) {
-            setError(data.error);
+          if (data1.success && data1.user) {
+            setUser(data1.user);
+            setCheckedIn(false);
+            new Audio("/confirmed.mp3").play();
+            await stopScanner();
             setLoading(false);
-            setCheckedIn(null);
             return;
           }
 
-          setUser(data.user);
-          setCheckedIn(data.checked_in ?? null);
-
-          // 🔊 sound
-          new Audio("/confirmed.mp3").play();
-
-          // 🛑 STOP SCANNER AFTER SUCCESS
-          await stopScanner();
+          setError("User not found");
+          setUser(null);
+          setCheckedIn(null);
         } catch (err) {
           console.error(err);
           setError("Request failed");
@@ -198,9 +217,6 @@ export default function ScannerPage() {
           <p>
             <strong>Other:</strong> {user.dietary_other}
           </p>
-          <p>
-            <strong>Meals Left:</strong> {user.meals_left}
-          </p>
 
           {/* CHECK-IN STATUS */}
           {checkedIn !== null && (
@@ -209,7 +225,28 @@ export default function ScannerPage() {
             </p>
           )}
 
-          {/* CHECK-IN BUTTON */}
+          {/* If registered (checkedIn) show meals left and confirm meal */}
+          {checkedIn && (
+            <>
+              <p>
+                <strong>Meals Left:</strong> {user.meals_left}
+              </p>
+              <button
+                onClick={confirmMeal}
+                disabled={locked}
+                className="
+                  mt-3 w-full py-2 rounded-xl text-white font-semibold
+                  bg-sky-500 shadow-lg shadow-sky-400/60
+                  hover:bg-sky-600 transition
+                  disabled:opacity-50 disabled:cursor-not-allowed
+                "
+              >
+                {locked ? "Confirmed" : "Confirm Meal"}
+              </button>
+            </>
+          )}
+
+          {/* If not registered, show check-in button */}
           {!checkedIn && checkedIn !== null && (
             <button
               onClick={checkInParticipant}
@@ -224,20 +261,6 @@ export default function ScannerPage() {
               {checkinLoading ? "Checking In..." : "Check - In Participant"}
             </button>
           )}
-
-          {/* CONFIRM */}
-          <button
-            onClick={confirmMeal}
-            disabled={locked}
-            className="
-              mt-3 w-full py-2 rounded-xl text-white font-semibold
-              bg-sky-500 shadow-lg shadow-sky-400/60
-              hover:bg-sky-600 transition
-              disabled:opacity-50 disabled:cursor-not-allowed
-            "
-          >
-            {locked ? "Confirmed" : "Confirm Meal"}
-          </button>
 
           {/* RESET */}
           <button
