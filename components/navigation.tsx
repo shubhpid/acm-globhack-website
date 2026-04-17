@@ -116,7 +116,7 @@ export function Navigation() {
               </Button>
             </Link>
             {/* Register */}
-            <Link href="">
+            <Link href="/register">
               <Button
                 size="sm"
                 className="glass-button text-white rounded-xl cursor-pointer"
